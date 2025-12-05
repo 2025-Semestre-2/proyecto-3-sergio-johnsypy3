@@ -18,6 +18,7 @@ go
 */
 
 --lista
+-- Poner HIST
 CREATE TABLE DimProducts (
 	product_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     product_id INT NOT NULL,
@@ -27,7 +28,9 @@ CREATE TABLE DimProducts (
     category_id INT NOT NULL,
 	category_name VARCHAR(255) NOT NULL,
     model_year SMALLINT NOT NULL,
-    list_price DECIMAL(10,2) NOT NULL
+    list_price DECIMAL(10,2) NOT NULL,
+	start_date datetime,
+	end_date datetime
 )
 go
 
@@ -44,6 +47,7 @@ go
 
 
 -- lista
+-- Poner HIST
 CREATE TABLE DimCustomers (
 	customer_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -52,7 +56,9 @@ CREATE TABLE DimCustomers (
 	full_name VARCHAR(255) NOT NULL,
     city VARCHAR(50) NOT NULL,
     state VARCHAR(25) NOT NULL,
-    zip_code VARCHAR(5) NOT NULL
+    zip_code VARCHAR(5) NOT NULL,
+	start_date datetime,
+	end_date datetime
 ) 
 go
 
@@ -81,6 +87,7 @@ go
 */
 
 -- lista
+-- Poner HIST
 CREATE TABLE DimStaffs (
 	staff_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     staff_id INT NOT NULL,
@@ -89,7 +96,9 @@ CREATE TABLE DimStaffs (
     store_id INT NOT NULL,
 	store_name VARCHAR(255) NOT NULL, 
     manager_id INT NULL,
-	manager_name VARCHAR(100) NOT NULL
+	manager_name VARCHAR(100) NOT NULL,
+	start_date datetime,
+	end_date datetime
 )
 go
 
@@ -107,7 +116,6 @@ CREATE TABLE DimStores (
 go
 
 
-
 -- SALES
 CREATE TABLE dbo.FactOrders (
 	sales_key INT IDENTITY(1,1) NOT NULL,
@@ -118,8 +126,8 @@ CREATE TABLE dbo.FactOrders (
 	--ShipperKey INT NOT NULL,
 	order_key INT NOT NULL,
 	order_date_key INT NOT NULL, -- ESTO VA CON DimDate
-	RequiredDateKey INT NOT NULL, -- ESTO VA CON DimDate
-	ShippedDateKey INT NOT NULL, -- ESTO VA CON DimDate
+	required_date_key INT NOT NULL, -- ESTO VA CON DimDate
+	shipped_date_key INT NOT NULL, -- ESTO VA CON DimDate
 	--QuantityPerUnit nvarchar(40) not null, 
 	list_price DECIMAL(10,2) not null,
 	--UnitsInStock smallint not null,
@@ -140,22 +148,22 @@ ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(customer_key)
 REFERENCES dbo.DimCustomers (customer_key)
 GO
 ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(staff_key)
-REFERENCES dbo.DimEmployees (staff_key)
+REFERENCES dbo.DimStaffs (staff_key)
 GO
 ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(order_key)
 REFERENCES dbo.DimOrders (order_key)
 GO
-ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(OrderDateKey) --DimDate
-REFERENCES dbo.DimDate (DateKey)
+ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(order_date_key) --DimDate
+REFERENCES dbo.DimDate (date_key)
 GO
 ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(product_key)
 REFERENCES dbo.DimProducts (product_key)
 GO
-ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(RequiredDateKey) --DimDate
-REFERENCES dbo.DimDate (DateKey)
+ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(required_date_key) --DimDate
+REFERENCES dbo.DimDate (date_key)
 GO
-ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(ShippedDateKey) --DimDate
-REFERENCES dbo.DimDate (DateKey)
+ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(shipped_date_key) --DimDate
+REFERENCES dbo.DimDate (date_key)
 GO
 --ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(SupplierKey)
 --REFERENCES dbo.DimSuppliers (SuppliersKey)
@@ -163,13 +171,4 @@ GO
 --ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(ShipperKey)
 --REFERENCES dbo.DimShippers (ShippersKey)
 --GO
-
-
-
-
-
-
-
-
-
 

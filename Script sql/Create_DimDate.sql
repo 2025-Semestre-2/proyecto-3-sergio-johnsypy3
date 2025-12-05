@@ -9,63 +9,38 @@ END CATCH
 /**********************************************************************************/
 
 CREATE TABLE	[dbo].[DimDate]
-	(	[DateKey] INT primary key, 
-		[Date] DATETIME,
-		[FullDateUK] CHAR(10), -- Date in dd-MM-yyyy format
-		[FullDateUSA] CHAR(10),-- Date in MM-dd-yyyy format
-		[DayOfMonth] VARCHAR(2), -- Field will hold day number of Month
-		[DaySuffix] VARCHAR(4), -- Apply suffix as 1st, 2nd ,3rd etc
-		[DayName] VARCHAR(9), -- Contains name of the day, Sunday, Monday 
-		[DayOfWeekUSA] CHAR(1),-- First Day Sunday=1 and Saturday=7
-		[DayOfWeekUK] CHAR(1),-- First Day Monday=1 and Sunday=7
-		[DayOfWeekInMonth] VARCHAR(2), --1st Monday or 2nd Monday in Month
-		[DayOfWeekInYear] VARCHAR(2),
-		[DayOfQuarter] VARCHAR(3),
-		[DayOfYear] VARCHAR(3),
-		[WeekOfMonth] VARCHAR(1),-- Week Number of Month 
-		[WeekOfQuarter] VARCHAR(2), --Week Number of the Quarter
-		[WeekOfYear] VARCHAR(2),--Week Number of the Year
-		[Month] VARCHAR(2), --Number of the Month 1 to 12
-		[MonthName] VARCHAR(9),--January, February etc
-		[MonthOfQuarter] VARCHAR(2),-- Month Number belongs to Quarter
-		[Quarter] CHAR(1),
-		[QuarterName] VARCHAR(9),--First,Second..
-		[Year] CHAR(4),-- Year value of Date stored in Row
-		[YearName] CHAR(7), --CY 2012,CY 2013
-		[MonthYear] CHAR(10), --Jan-2013,Feb-2013
-		[MMYYYY] CHAR(6),
-		[FirstDayOfMonth] DATE,
-		[LastDayOfMonth] DATE,
-		[FirstDayOfQuarter] DATE,
-		[LastDayOfQuarter] DATE,
-		[FirstDayOfYear] DATE,
-		[LastDayOfYear] DATE,
+	(	[date_key] INT primary key, 
+		[date] DATETIME,
+		[full_date] CHAR(10), -- Date in dd-MM-yyyy format
+		[day_of_month] VARCHAR(2), -- Field will hold day number of month
+		[day_name] VARCHAR(9), -- Contains name of the day, Sunday, Monday 
+		[day_of_week_usa] CHAR(1),-- First Day Sunday=1 and Saturday=7
+		[day_of_week_cr] CHAR(1),-- First Day Monday=1 and Sunday=7
+		[day_of_week_in_month] VARCHAR(2), --1st Monday or 2nd Monday in month
+		[day_of_week_in_year] VARCHAR(2),
+		[day_of_quarter] VARCHAR(3),
+		[day_of_year] VARCHAR(3),
+		[week_of_month] VARCHAR(1),-- Week Number of month 
+		[week_of_quarter] VARCHAR(2), --Week Number of the quarter
+		[week_of_year] VARCHAR(2),--Week Number of the year
+		[month] VARCHAR(2), --Number of the month 1 to 12
+		[month_name] VARCHAR(9),--January, February etc
+		[month_of_quarter] VARCHAR(2),-- month Number belongs to quarter
+		[quarter] CHAR(1),
+		[quarter_name] VARCHAR(9),--First,Second..
+		[year] CHAR(4),-- year value of Date stored in Row
+		[year_name] CHAR(7), --CY 2012,CY 2013
+		[month_year] CHAR(10), --Jan-2013,Feb-2013
+		[mmyyyy] CHAR(6),
+		[first_day_of_month] DATE,
+		[last_day_of_month] DATE,
+		[first_day_of_quarter] DATE,
+		[last_day_of_quarter] DATE,
+		[first_day_of_year] DATE,
+		[last_day_of_year] DATE,
 		[IsWeekday] BIT,-- 0=Week End ,1=Week Day
 		[IsHoliday] BIT Null,-- Flag 1=National Holiday, 0-No National Holiday
-		[Holiday] VARCHAR(50) Null --Name of Holiday in UK
+		[Holiday] VARCHAR(75) Null --Name of Holiday in UK
 	)
 GO
 
-
-
-CREATE TABLE dbo.DimDate (
-    DateKey         INT         NOT NULL PRIMARY KEY,   -- Formato: YYYYMMDD
-    FullDate        DATE        NOT NULL,
-
-    -- Atributos de año, mes, día
-    Day             TINYINT     NOT NULL,
-    Month           TINYINT     NOT NULL,
-    MonthName       VARCHAR(20) NOT NULL,
-    Year            SMALLINT    NOT NULL,
-
-    -- Detalles adicionales
-    DayOfWeek       TINYINT     NOT NULL,
-    DayName         VARCHAR(20) NOT NULL,
-    WeekOfYear      TINYINT     NOT NULL,
-    Quarter         TINYINT     NOT NULL,
-    QuarterName     VARCHAR(20) NOT NULL,
-
-    -- Flags comunes para BI
-    IsWeekend       BIT         NOT NULL,
-    IsHoliday       BIT         NOT NULL DEFAULT 0   -- Por si luego le agregás feriados
-);
