@@ -39,11 +39,11 @@ go
 
 CREATE TABLE sales.customers (
     customer_id INT NOT NULL,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
     city VARCHAR(50) NOT NULL,
-    state VARCHAR(50) NOT NULL,
-    zip_code VARCHAR(10) NOT NULL
+    state VARCHAR(25) NOT NULL,
+    zip_code VARCHAR(5) NOT NULL
     --email,phone,street
 ) 
 go
@@ -74,7 +74,7 @@ CREATE TABLE sales.staffs (
     staff_id INT NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    active BIT NOT NULL,
+    active tinyint NOT NULL,
     store_id INT NOT NULL,
     manager_id INT NULL
     --email, phone, ¿active?
@@ -84,11 +84,12 @@ go
 CREATE TABLE sales.stores (
     store_id INT NOT NULL,
     store_name VARCHAR(255) NOT NULL,
-    city VARCHAR(50) NOT NULL,
-    state VARCHAR(50) NOT NULL,
-    zip_code VARCHAR(10) NOT NULL
+    city VARCHAR(255) NOT NULL,
+    state VARCHAR(10) NOT NULL,
+    zip_code VARCHAR(5) NOT NULL
     --phone, email, street
-);
+)
+go
 
 
 
