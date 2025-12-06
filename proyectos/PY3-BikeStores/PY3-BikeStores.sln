@@ -5,13 +5,35 @@ VisualStudioVersion = 16.0.36631.11
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "PY3-BikeStores", "PY3-BikeStores\PY3-BikeStores.dtproj", "{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PY3-BikeStores-Reporting", "PY3-BikeStores-Reporting\PY3-BikeStores-Reporting.rptproj", "{66A9204B-6C47-46E7-A74C-0E10B95D23EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
 		Development|Default = Development|Default
+		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}.Debug|Default.ActiveCfg = Development
+		{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}.Debug|Default.Build.0 = Development
+		{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}.DebugLocal|Default.ActiveCfg = Development
+		{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}.DebugLocal|Default.Build.0 = Development
 		{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}.Development|Default.ActiveCfg = Development
 		{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}.Development|Default.Build.0 = Development
+		{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}.Release|Default.ActiveCfg = Development
+		{A44442F9-4D60-4594-A7AC-C123AE1FC1FC}.Release|Default.Build.0 = Development
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Debug|Default.ActiveCfg = Debug
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Debug|Default.Build.0 = Debug
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Debug|Default.Deploy.0 = Debug
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.DebugLocal|Default.Build.0 = DebugLocal
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Development|Default.ActiveCfg = Debug
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Development|Default.Build.0 = Debug
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Development|Default.Deploy.0 = Debug
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Release|Default.ActiveCfg = Release
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Release|Default.Build.0 = Release
+		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Release|Default.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
