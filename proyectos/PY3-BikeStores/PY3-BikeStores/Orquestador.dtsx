@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package3"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{9B9CDA20-E8C8-480C-98B7-119F47BF963F}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{54FA8E18-4995-4100-A834-54B68F667B49}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -257,7 +257,152 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Transformar">
       <DTS:Variables />
-      <DTS:Executables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Transformar\Dim Customers"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{9BFA6A79-1AB1-4C54-9B89-16C32C597D87}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Customers"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Customers.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformar\Dim Orders"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{2d691a68-b166-430b-af22-1463c807bb09}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Orders"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Orders.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformar\Dim Products"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{5d34c9b8-3984-4911-ad65-a4051ab30cef}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Products"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Products.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformar\Dim Staffs"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{e382f39b-4614-48d2-97fd-5db1568f9672}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Staffs"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Staffs.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformar\Dim Stocks"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{534ca71c-f451-4eea-8f9a-956b66ceaa22}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Stocks"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Stocks.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Transformar\Dim Stores"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{1bfc4ed6-2e14-495a-b241-a73805feec93}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Dim Stores"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Dim Stores.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformar.PrecedenceConstraints[Restricción]"
+          DTS:CreationName=""
+          DTS:DTSID="{1543D467-A1DB-496C-98D1-151DDC42C690}"
+          DTS:From="Package\Transformar\Dim Customers"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción"
+          DTS:To="Package\Transformar\Dim Orders" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformar.PrecedenceConstraints[Restricción 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{185C3F01-7FBF-47CA-98FA-73FC5F678427}"
+          DTS:From="Package\Transformar\Dim Orders"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Transformar\Dim Products" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformar.PrecedenceConstraints[Restricción 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{E82526D7-2C83-48AB-8337-E7DAB5F1E885}"
+          DTS:From="Package\Transformar\Dim Products"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 2"
+          DTS:To="Package\Transformar\Dim Stocks" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformar.PrecedenceConstraints[Restricción 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{CBC6326C-C4B2-45EB-B9A2-23D802BBD2B9}"
+          DTS:From="Package\Transformar\Dim Stocks"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 3"
+          DTS:To="Package\Transformar\Dim Staffs" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Transformar.PrecedenceConstraints[Restricción 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{8B9AD24E-9ADD-4BC3-9629-144AD4D79D75}"
+          DTS:From="Package\Transformar\Dim Staffs"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 4"
+          DTS:To="Package\Transformar\Dim Stores" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
@@ -282,19 +427,12 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="222.4,54.4"
-          Size="222.4,97.6"
-          Id="Package\Transformar"
-          TopLeft="641.785700229205,118.185293639043" />
         <NodeLayout
-          Size="110.4,40"
+          Size="110.666666666667,40"
           Id="Package\Extraer\Brands"
           TopLeft="37.4857162319885,14.1764716285323" />
         <NodeLayout
-          Size="129.6,41.6"
+          Size="129.333333333334,41.3333333333334"
           Id="Package\Extraer\Categories"
           TopLeft="196.860718966085,17.5029424500704" />
         <NodeLayout
@@ -302,7 +440,7 @@
           Id="Package\Extraer\Customers"
           TopLeft="30.8785735417234,88.6205900915137" />
         <NodeLayout
-          Size="134.4,40"
+          Size="134.666666666667,40"
           Id="Package\Extraer\Order Items"
           TopLeft="28.2000017881394,167.88235613714" />
         <NodeLayout
@@ -310,11 +448,11 @@
           Id="Package\Extraer\Orders"
           TopLeft="200.342861862572,88.9264727805674" />
         <NodeLayout
-          Size="118.4,40"
+          Size="118.666666666667,40"
           Id="Package\Extraer\Products"
           TopLeft="194.628576050973,164.058826671752" />
         <NodeLayout
-          Size="105.6,40"
+          Size="105.333333333334,40"
           Id="Package\Extraer\Staffs"
           TopLeft="39.2714306279409,242.173533255595" />
         <NodeLayout
@@ -516,36 +654,225 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="512,424"
-          Size="512,465.6"
+          PanelSize="380,422.666666666667"
+          Size="380,465.333333333334"
           Id="Package\Extraer"
-          TopLeft="77.1428584565921,30.5882357231061" />
+          TopLeft="77.1428584565921,125.488234026162" />
+        <NodeLayout
+          Size="189.333333333334,42.6666666666667"
+          Id="Package\Transformar\Dim Customers"
+          TopLeft="16.1249901931737,14.1833302067718" />
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\Transformar\Dim Orders"
+          TopLeft="91.1249890755861,80.4499975243212" />
+        <NodeLayout
+          Size="177.333333333334,42"
+          Id="Package\Transformar\Dim Products"
+          TopLeft="22.3749901000413,148.149994990528" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="589.142858456592,263.388235723106">
+          Id="Package\Transformar.PrecedenceConstraints[Restricción]"
+          TopLeft="110.79165685984,56.8499968734385">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="52.6428417726131,-96.4029420840628"
+              EndConnector="46.9999988824124,23.6000006508828"
               Start="0,0"
-              End="45.1428417726131,-96.4029420840628">
+              End="46.9999988824124,16.1000006508828">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="22.3214208863066,0" />
+                    End="0,7.80000032544138" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.3214208863066,0"
-                    Point2="26.3214208863066,0"
-                    Point3="26.3214208863066,-4" />
+                    Point1="0,7.80000032544138"
+                    Point2="0,11.8000003254414"
+                    Point3="4,11.8000003254414" />
                   <mssgle:LineSegment
-                    End="26.3214208863066,-92.4029420840628" />
+                    End="42.9999988824124,11.8000003254414" />
                   <mssgle:CubicBezierSegment
-                    Point1="26.3214208863066,-92.4029420840628"
-                    Point2="26.3214208863066,-96.4029420840628"
-                    Point3="30.3214208863066,-96.4029420840628" />
+                    Point1="42.9999988824124,11.8000003254414"
+                    Point2="46.9999988824124,11.8000003254414"
+                    Point3="46.9999988824124,15.8000003254414" />
                   <mssgle:LineSegment
-                    End="45.1428417726131,-96.4029420840628" />
+                    End="46.9999988824124,16.1000006508828" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformar.PrecedenceConstraints[Restricción 1]"
+          TopLeft="157.791655742253,123.116664190988">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.7499989755448,25.0333307995398"
+              Start="0,0"
+              End="-46.7499989755448,17.5333307995398">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.51666539976991" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.51666539976991"
+                    Point2="0,12.5166653997699"
+                    Point3="-4,12.5166653997699" />
+                  <mssgle:LineSegment
+                    End="-42.7499989755448,12.5166653997699" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42.7499989755448,12.5166653997699"
+                    Point2="-46.7499989755448,12.5166653997699"
+                    Point3="-46.7499989755448,16.5166653997699" />
+                  <mssgle:LineSegment
+                    End="-46.7499989755448,17.5333307995398" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\Transformar\Dim Stocks"
+          TopLeft="119.249988656492,218.966662226717" />
+        <EdgeLayout
+          Id="Package\Transformar.PrecedenceConstraints[Restricción 2]"
+          TopLeft="111.041656766708,190.149994990528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.8749985564508,28.816667236189"
+              Start="0,0"
+              End="74.8749985564508,21.316667236189">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.4083336180945" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.4083336180945"
+                    Point2="0,14.4083336180945"
+                    Point3="4,14.4083336180945" />
+                  <mssgle:LineSegment
+                    End="70.8749985564508,14.4083336180945" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.8749985564508,14.4083336180945"
+                    Point2="74.8749985564508,14.4083336180945"
+                    Point3="74.8749985564508,18.4083336180945" />
+                  <mssgle:LineSegment
+                    End="74.8749985564508,21.316667236189" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\Transformar\Dim Staffs"
+          TopLeft="18.624990155921,291.08332943966" />
+        <EdgeLayout
+          Id="Package\Transformar.PrecedenceConstraints[Restricción 3]"
+          TopLeft="185.916655323159,261.633328893383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-100.624998500571,29.4500005462767"
+              Start="0,0"
+              End="-100.624998500571,21.9500005462767">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.7250002731384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.7250002731384"
+                    Point2="0,14.7250002731384"
+                    Point3="-4,14.7250002731384" />
+                  <mssgle:LineSegment
+                    End="-96.6249985005711,14.7250002731384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-96.6249985005711,14.7250002731384"
+                    Point2="-100.624998500571,14.7250002731384"
+                    Point3="-100.624998500571,18.7250002731384" />
+                  <mssgle:LineSegment
+                    End="-100.624998500571,21.9500005462767" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.333333333334,42.6666666666667"
+          Id="Package\Transformar\Dim Stores"
+          TopLeft="121.124988628551,357.999996745587" />
+        <EdgeLayout
+          Id="Package\Transformar.PrecedenceConstraints[Restricción 4]"
+          TopLeft="85.2916568225876,333.749996106327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.499998472631,24.2500006392599"
+              Start="0,0"
+              End="101.499998472631,16.7500006392599">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.12500031962995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.12500031962995"
+                    Point2="0,12.1250003196299"
+                    Point3="4,12.1250003196299" />
+                  <mssgle:LineSegment
+                    End="97.4999984726305,12.1250003196299" />
+                  <mssgle:CubicBezierSegment
+                    Point1="97.4999984726305,12.1250003196299"
+                    Point2="101.499998472631,12.1250003196299"
+                    Point3="101.499998472631,16.1250003196299" />
+                  <mssgle:LineSegment
+                    End="101.499998472631,16.7500006392599" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="282.666666666667,420.666666666667"
+          Size="282.666666666667,464"
+          Id="Package\Transformar"
+          TopLeft="519.910702045284,126.268625170826" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="457.142858456592,358.211762931827">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.7678435886924,0"
+              Start="0,0"
+              End="55.2678435886924,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.2678435886924,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
