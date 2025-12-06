@@ -1,5 +1,4 @@
-create database BikeStoresDW
-go
+
 use BikeStoresDW
 go
 
@@ -19,7 +18,7 @@ go
 
 --lista
 -- Poner HIST
-CREATE TABLE DimProducts (
+CREATE TABLE DimProducts ( --
 	product_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     product_id INT NOT NULL,
     product_name VARCHAR(255) NOT NULL,
@@ -27,8 +26,8 @@ CREATE TABLE DimProducts (
 	brand_name VARCHAR(255) NOT NULL, 
     category_id INT NOT NULL,
 	category_name VARCHAR(255) NOT NULL,
-    model_year SMALLINT NOT NULL,
-    list_price DECIMAL(10,2) NOT NULL,
+	model_year SMALLINT NOT NULL,
+	list_price DECIMAL(10,2) not null,
 	start_date datetime,
 	end_date datetime
 )
@@ -36,19 +35,18 @@ go
 
 
 -- lista
-CREATE TABLE DimStocks (
+CREATE TABLE DimStocks ( --
 	stock_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     store_id INT NOT NULL,
     product_id INT NOT NULL,
-	product_name VARCHAR(255) NOT NULL,
-    quantity INT NOT NULL
+	product_name VARCHAR(255) NOT NULL
 )
 go
 
 
 -- lista
 -- Poner HIST
-CREATE TABLE DimCustomers (
+CREATE TABLE DimCustomers ( -- 
 	customer_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     customer_id INT NOT NULL,
     --first_name VARCHAR(255) NOT NULL,
@@ -64,11 +62,11 @@ go
 
 
 -- revisar
-CREATE TABLE DimOrders (
+CREATE TABLE DimOrders ( --
 	order_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     order_id INT NOT NULL,
     --customer_id INT NOT NULL,
-    --order_status INT NOT NULL,
+    order_status INT NOT NULL,
     --store_id INT NOT NULL,
     --staff_id INT NOT NULL
 )
@@ -88,13 +86,11 @@ go
 
 -- lista
 -- Poner HIST
-CREATE TABLE DimStaffs (
+CREATE TABLE DimStaffs ( --
 	staff_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     staff_id INT NOT NULL,
     full_name VARCHAR(100) NOT NULL,
     active tinyint NOT NULL,
-    store_id INT NOT NULL,
-	store_name VARCHAR(255) NOT NULL, 
     manager_id INT NULL,
 	manager_name VARCHAR(100) NOT NULL,
 	start_date datetime,
@@ -123,13 +119,14 @@ CREATE TABLE dbo.FactOrders (
 	--SupplierKey INT NOT NULL,
 	customer_key INT NOT NULL,
 	staff_key INT NOT NULL,
+	store_key INT NOT NULL,
 	--ShipperKey INT NOT NULL,
 	order_key INT NOT NULL,
 	order_date_key INT NOT NULL, -- ESTO VA CON DimDate
 	required_date_key INT NOT NULL, -- ESTO VA CON DimDate
 	shipped_date_key INT NOT NULL, -- ESTO VA CON DimDate
 	--QuantityPerUnit nvarchar(40) not null, 
-	list_price DECIMAL(10,2) not null,
+	list_price_order DECIMAL(10,2) not null,
 	--UnitsInStock smallint not null,
 	quantity_stock INT not null, -- esto se ocupa?
 	quantity_order INT not null,
@@ -149,6 +146,9 @@ REFERENCES dbo.DimCustomers (customer_key)
 GO
 ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(staff_key)
 REFERENCES dbo.DimStaffs (staff_key)
+GO
+ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(store_key)
+REFERENCES dbo.DimStores (store_key)
 GO
 ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(order_key)
 REFERENCES dbo.DimOrders (order_key)

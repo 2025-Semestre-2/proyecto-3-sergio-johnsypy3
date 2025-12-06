@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/5/2025 8:09:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SERMONBADI"
+  DTS:CreatorName="SERMONBADI\sermo"
+  DTS:DTSID="{6C6818A6-B7DA-405F-B8A5-E6E3EA751AD2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="5130"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionGUID="{0E201AA6-072E-4937-95C3-876E08F25CE5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>

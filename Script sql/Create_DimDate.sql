@@ -1,3 +1,9 @@
+create database BikeStoresDW
+go
+
+use BikeStoresDW
+go
+
 BEGIN TRY
 	DROP TABLE [dbo].[DimDate]
 END TRY

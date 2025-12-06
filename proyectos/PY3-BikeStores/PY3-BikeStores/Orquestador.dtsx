@@ -11,23 +11,12 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package3"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{0451B2D9-DEFE-424D-B0A8-E386DBDF1A52}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{9B9CDA20-E8C8-480C-98B7-119F47BF963F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Contenedor de secuencias"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Contenedor de secuencias"
-      DTS:DTSID="{831E7067-D13A-44BC-92FB-F70314B1353E}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Contenedor de secuencias">
-      <DTS:Variables />
-      <DTS:Executables />
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Extraer"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -259,7 +248,28 @@
           DTS:To="Package\Extraer\Stores" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transformar"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{831E7067-D13A-44BC-92FB-F70314B1353E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformar">
+      <DTS:Variables />
+      <DTS:Executables />
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{3955973C-F766-4969-9493-B95DA44F9CCC}"
+      DTS:From="Package\Extraer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Transformar" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
 <!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
@@ -272,12 +282,19 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="222.4,54.4"
+          Size="222.4,97.6"
+          Id="Package\Transformar"
+          TopLeft="641.785700229205,118.185293639043" />
         <NodeLayout
-          Size="110,40"
+          Size="110.4,40"
           Id="Package\Extraer\Brands"
           TopLeft="37.4857162319885,14.1764716285323" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Extraer\Categories"
           TopLeft="196.860718966085,17.5029424500704" />
         <NodeLayout
@@ -285,7 +302,7 @@
           Id="Package\Extraer\Customers"
           TopLeft="30.8785735417234,88.6205900915137" />
         <NodeLayout
-          Size="134,40"
+          Size="134.4,40"
           Id="Package\Extraer\Order Items"
           TopLeft="28.2000017881394,167.88235613714" />
         <NodeLayout
@@ -293,11 +310,11 @@
           Id="Package\Extraer\Orders"
           TopLeft="200.342861862572,88.9264727805674" />
         <NodeLayout
-          Size="118,40"
+          Size="118.4,40"
           Id="Package\Extraer\Products"
           TopLeft="194.628576050973,164.058826671752" />
         <NodeLayout
-          Size="106,40"
+          Size="105.6,40"
           Id="Package\Extraer\Staffs"
           TopLeft="39.2714306279409,242.173533255595" />
         <NodeLayout
@@ -500,16 +517,43 @@
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="512,424"
-          Size="512,466"
+          Size="512,465.6"
           Id="Package\Extraer"
           TopLeft="77.1428584565921,30.5882357231061" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="204,54"
-          Size="222,96"
-          Id="Package\Contenedor de secuencias"
-          TopLeft="782.499988339841,66.9499988028406" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="589.142858456592,263.388235723106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.6428417726131,-96.4029420840628"
+              Start="0,0"
+              End="45.1428417726131,-96.4029420840628">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.3214208863066,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.3214208863066,0"
+                    Point2="26.3214208863066,0"
+                    Point3="26.3214208863066,-4" />
+                  <mssgle:LineSegment
+                    End="26.3214208863066,-92.4029420840628" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.3214208863066,-92.4029420840628"
+                    Point2="26.3214208863066,-96.4029420840628"
+                    Point3="30.3214208863066,-96.4029420840628" />
+                  <mssgle:LineSegment
+                    End="45.1428417726131,-96.4029420840628" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
