@@ -1,18 +1,18 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="12/4/2025 10:07:50 PM"
+  DTS:CreationDate="12/4/2025 10:09:42 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="SERMONBADI"
   DTS:CreatorName="SERMONBADI\sermo"
-  DTS:DTSID="{A31BDE8F-F8BB-4576-BAAB-1ECD8422A763}"
+  DTS:DTSID="{11185E42-71DD-4BF8-99FB-C0EADD3ABCB0}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5467.0"
   DTS:LocaleID="5130"
   DTS:ObjectName="Package3"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{38BBC611-10A6-42A7-91BE-9E0318F1CD3B}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{04A7BE8F-06FA-4B0E-BBDC-42BAEBD8C736}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,7 @@
       DTS:refId="Package\Borrar tabla"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{46a18ac2-7318-4657-87b9-813e71b23aab}"
+      DTS:DTSID="{47794eb5-a2f9-45ab-a723-0d53f9ddd8d4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Borrar tabla"
@@ -31,14 +31,14 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{36BCD43F-33C3-4766-A5E0-A6759F2ECF40}"
-          SQLTask:SqlStatementSource="drop table if exists sales.order_items" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="drop table if exists sales.staffs" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Copiar datos"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{d2621de1-6f61-42cd-8360-86853bd83c61}"
+      DTS:DTSID="{c0a611b2-9584-4a74-9200-0ed7ca6e662f}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Copiar datos"
@@ -64,7 +64,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[sales].[order_items]</property>
+                  name="OpenRowset">[sales].[staffs]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -121,76 +121,76 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[order_id]"
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[staff_id]"
                       cachedDataType="i4"
-                      cachedName="order_id"
-                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[order_id]" />
+                      cachedName="staff_id"
+                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[staff_id]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[staff_id]" />
                     <inputColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[item_id]"
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[active]"
+                      cachedDataType="ui1"
+                      cachedName="active"
+                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[active]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[active]" />
+                    <inputColumn
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[store_id]"
                       cachedDataType="i4"
-                      cachedName="item_id"
-                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[item_id]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[item_id]" />
+                      cachedName="store_id"
+                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[store_id]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[store_id]" />
                     <inputColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[product_id]"
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[manager_id]"
                       cachedDataType="i4"
-                      cachedName="product_id"
-                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[product_id]" />
-                    <inputColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[quantity]"
-                      cachedDataType="i4"
-                      cachedName="quantity"
-                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[quantity]" />
-                    <inputColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[list_price]"
-                      cachedDataType="numeric"
-                      cachedName="list_price"
-                      cachedPrecision="10"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[list_price]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[list_price]" />
-                    <inputColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].Columns[discount]"
-                      cachedDataType="numeric"
-                      cachedName="discount"
-                      cachedPrecision="4"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[discount]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[discount]" />
+                      cachedName="manager_id"
+                      externalMetadataColumnId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[manager_id]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[manager_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[staff_id]"
                       dataType="i4"
-                      name="order_id" />
+                      name="staff_id" />
                     <externalMetadataColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[item_id]"
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[active]"
+                      dataType="ui1"
+                      name="active" />
+                    <externalMetadataColumn
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[store_id]"
                       dataType="i4"
-                      name="item_id" />
+                      name="store_id" />
                     <externalMetadataColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[product_id]"
+                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[manager_id]"
                       dataType="i4"
-                      name="product_id" />
-                    <externalMetadataColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
-                      dataType="i4"
-                      name="quantity" />
-                    <externalMetadataColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[list_price]"
-                      dataType="numeric"
-                      name="list_price"
-                      precision="10"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Copiar datos\Copiar a destino.Inputs[OLE DB Destination Input].ExternalColumns[discount]"
-                      dataType="numeric"
-                      name="discount"
-                      precision="5"
-                      scale="2" />
+                      name="manager_id" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -235,7 +235,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[sales].[order_items]</property>
+                  name="OpenRowset">[sales].[staffs]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -281,94 +281,106 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[order_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[staff_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[order_id]"
-                      name="order_id"
+                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[staff_id]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[staff_id]"
+                      name="staff_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[item_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      length="50"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      length="50"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[active]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[active]"
+                      name="active"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[store_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[item_id]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[item_id]"
-                      name="item_id"
+                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[store_id]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[store_id]"
+                      name="store_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[product_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[manager_id]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[product_id]"
-                      name="product_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[quantity]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[quantity]"
-                      name="quantity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[list_price]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[list_price]"
-                      name="list_price"
-                      precision="10"
-                      scale="2"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[discount]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[discount]"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[discount]"
-                      name="discount"
-                      precision="4"
-                      scale="2"
+                      externalMetadataColumnId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[manager_id]"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].Columns[manager_id]"
+                      name="manager_id"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[staff_id]"
                       dataType="i4"
-                      name="order_id" />
+                      name="staff_id" />
                     <externalMetadataColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[item_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      dataType="ui1"
+                      name="active" />
+                    <externalMetadataColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[store_id]"
                       dataType="i4"
-                      name="item_id" />
+                      name="store_id" />
                     <externalMetadataColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[product_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[manager_id]"
                       dataType="i4"
-                      name="product_id" />
-                    <externalMetadataColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
-                      dataType="i4"
-                      name="quantity" />
-                    <externalMetadataColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
-                      dataType="numeric"
-                      name="list_price"
-                      precision="10"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Output].ExternalColumns[discount]"
-                      dataType="numeric"
-                      name="discount"
-                      precision="4"
-                      scale="2" />
+                      name="manager_id" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -377,39 +389,39 @@
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[staff_id]"
                       dataType="i4"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[order_id]"
-                      name="order_id" />
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[staff_id]"
+                      name="staff_id" />
                     <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[item_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[active]"
+                      dataType="ui1"
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[active]"
+                      name="active" />
+                    <outputColumn
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[store_id]"
                       dataType="i4"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[item_id]"
-                      name="item_id" />
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[store_id]"
+                      name="store_id" />
                     <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[product_id]"
+                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[manager_id]"
                       dataType="i4"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[product_id]"
-                      name="product_id" />
-                    <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[quantity]"
-                      dataType="i4"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[quantity]"
-                      name="quantity" />
-                    <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[list_price]"
-                      dataType="numeric"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[list_price]"
-                      name="list_price"
-                      precision="10"
-                      scale="2" />
-                    <outputColumn
-                      refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[discount]"
-                      dataType="numeric"
-                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[discount]"
-                      name="discount"
-                      precision="4"
-                      scale="2" />
+                      lineageId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[manager_id]"
+                      name="manager_id" />
                     <outputColumn
                       refId="Package\Copiar datos\Extraer del origen.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -442,7 +454,7 @@
       DTS:refId="Package\Crear tabla"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarea Ejecutar SQL"
-      DTS:DTSID="{29c70ae8-5ccd-47b3-ae56-f7f08f686aa3}"
+      DTS:DTSID="{49171777-68c2-4264-86b1-8703530b2539}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Crear tabla"
@@ -452,7 +464,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{36BCD43F-33C3-4766-A5E0-A6759F2ECF40}"
-          SQLTask:SqlStatementSource="CREATE TABLE sales.order_items (&#xA;    order_id INT NOT NULL,&#xA;    item_id INT NOT NULL,&#xA;    product_id INT NOT NULL,&#xA;    quantity INT NOT NULL,&#xA;    list_price DECIMAL(10,2) NOT NULL,&#xA;    discount DECIMAL(5,2) NOT NULL&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="CREATE TABLE sales.staffs (&#xA;    staff_id INT NOT NULL,&#xA;    first_name VARCHAR(50) NOT NULL,&#xA;    last_name VARCHAR(50) NOT NULL,&#xA;    active tinyint NOT NULL,&#xA;    store_id INT NOT NULL,&#xA;    manager_id INT NULL&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -460,7 +472,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{77ab032d-2144-4a82-840f-9161b38f25e2}"
+      DTS:DTSID="{d2dc7f0b-5f07-4f65-9db1-d80d507b24fa}"
       DTS:From="Package\Borrar tabla"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
@@ -468,7 +480,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
       DTS:CreationName=""
-      DTS:DTSID="{e31ae4eb-2acd-4e0d-a417-9ea51971d324}"
+      DTS:DTSID="{678be762-7ea1-48f0-aaf4-6dfe022a7a87}"
       DTS:From="Package\Crear tabla"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 1"
@@ -487,15 +499,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="134.666666666667,41.3333333333334"
+          Size="134.4,41.6"
           Id="Package\Borrar tabla"
           TopLeft="60,60" />
         <NodeLayout
-          Size="137.333333333334,41.3333333333334"
+          Size="137.6,41.6"
           Id="Package\Copiar datos"
           TopLeft="157.85714452364,244.294120231714" />
         <NodeLayout
-          Size="130.666666666667,41.3333333333334"
+          Size="130.4,41.6"
           Id="Package\Crear tabla"
           TopLeft="122.142858201144,135.705883414688" />
         <EdgeLayout
@@ -573,15 +585,15 @@
     design-time-name="Package\Copiar datos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Copiar datos\Extraer del origen"
-          TopLeft="264.285718786473,97.1176484208619" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\Copiar datos\Copiar a destino"
           TopLeft="340.000005790166,185.823532017869" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Copiar datos\Extraer del origen"
+          TopLeft="264.285718786473,97.1176484208619" />
         <EdgeLayout
           Id="Package\Copiar datos.Paths[OLE DB Source Output]"
           TopLeft="345.485718786473,138.717648420862">
@@ -613,9 +625,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

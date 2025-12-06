@@ -112,7 +112,7 @@ CREATE TABLE DimStores (
 go
 
 
--- SALES
+-- SALES DROP TABLE dbo.FactOrders
 CREATE TABLE dbo.FactOrders (
 	sales_key INT IDENTITY(1,1) NOT NULL,
 	product_key INT NOT NULL,
@@ -132,6 +132,7 @@ CREATE TABLE dbo.FactOrders (
 	quantity_order INT not null,
 	--Freight money not null, 
 	discount DECIMAL(5,2) NOT NULL,
+	price_discount DECIMAL(10, 2) NOT NULL
 	--Quantity smallint not null, -- TRES QUANTITY?
 	--UnitPriceOrder money not null --UnitPrice?
 

@@ -4,7 +4,7 @@
 --Value of Start Date Must be Less than Your End Date 
 
 DECLARE @StartDate DATETIME = '01/01/1900' --Starting value of Date Range
-DECLARE @EndDate DATETIME = '01/02/1900' --End Value of Date Range
+DECLARE @EndDate DATETIME = '01/01/1900' --End Value of Date Range
 
 --Temporary Variables To Hold the Values During Processing of Each Date of year
 DECLARE
@@ -37,7 +37,7 @@ SET @Currentquarter = DATEPART(QQ, @CurrentDate)
 /********************************************************************************************/
 --Proceed only if Start Date(Current date ) is less than End date you specified above
 
-WHILE @CurrentDate < @EndDate
+WHILE @CurrentDate <= @EndDate
 BEGIN
  
 /*Begin day of week logic*/
