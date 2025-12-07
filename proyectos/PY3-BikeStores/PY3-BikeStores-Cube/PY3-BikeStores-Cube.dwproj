@@ -6,10 +6,50 @@
     <Name>PY3-BikeStores-Cube.database</Name>
     <FullPath>PY3-BikeStores-Cube.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>BikeStores DW.cube</Name>
+      <FullPath>BikeStores DW.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BikeStores DW.partitions</Name>
+          <FullPath>BikeStores DW.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>Dim Products.dim</Name>
       <FullPath>Dim Products.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Stores.dim</Name>
+      <FullPath>Dim Stores.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Orders.dim</Name>
+      <FullPath>Dim Orders.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Customers.dim</Name>
+      <FullPath>Dim Customers.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Staffs.dim</Name>
+      <FullPath>Dim Staffs.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Stocks.dim</Name>
+      <FullPath>Dim Stocks.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fact Orders.dim</Name>
+      <FullPath>Fact Orders.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Date.dim</Name>
+      <FullPath>Dim Date.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -32,7 +72,7 @@
           <ConfigurationSetting>
             <Id>BikeStores DW</Id>
             <Name>BikeStores DW</Name>
-            <Value xsi:type="xsd:string">Provider=SQLOLEDB.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=BikeStoresDW</Value>
+            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=BikeStoresDW</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>

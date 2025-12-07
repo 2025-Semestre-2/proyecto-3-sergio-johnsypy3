@@ -1,0 +1,110 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>PY3-BikeStores-Cube</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>Q5mOM+TV/LUrxRtW7LOk2Lhat/4=12/7/2025 1:39:46 PM12/7/2025 9:44:42 AM</TimeStamp>
+        <ID>
+          <String>BikeStores DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>hluc/LRfQ5ugHm60DOZe72v4JTk=12/7/2025 1:23:05 PM12/7/2025 11:43:52 AM</TimeStamp>
+        <ID>
+          <String>BikeStores DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>uxX6bIElgVvnispv+uYkqu008GI=12/7/2025 12:44:08 PM12/7/2025 11:48:42 AM</TimeStamp>
+        <ID>
+          <String>Dim Products</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>aMzgba/JZMEGCWQYHK8eb2NjBpI=12/7/2025 11:57:48 AM12/7/2025 11:53:31 AM</TimeStamp>
+        <ID>
+          <String>Dim Stores</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5Mvfaime+vXjAFPRnr1WpB6JEro=12/7/2025 12:27:14 PM12/7/2025 12:24:18 PM</TimeStamp>
+        <ID>
+          <String>Dim Orders</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>d5+FRRD0VRBE28ahjnPHBA5+wKM=12/7/2025 12:44:08 PM12/7/2025 12:27:14 PM</TimeStamp>
+        <ID>
+          <String>Dim Customers</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>hP9X0tBv8lLTqQlATZyepw7f9/E=12/7/2025 12:58:07 PM12/7/2025 12:49:00 PM</TimeStamp>
+        <ID>
+          <String>Dim Staffs</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>rk/j3F4aGsxVajP7n3rbjJX/R2o=12/7/2025 1:23:05 PM12/7/2025 1:23:05 PM</TimeStamp>
+        <ID>
+          <String>Dim Stocks</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>YBzlT4p8muwOUtAJmArm95WGOwg=12/7/2025 1:30:02 PM12/7/2025 1:30:01 PM</TimeStamp>
+        <ID>
+          <String>Fact Orders</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>d6PJ4kF1zomOQcEws4icMc7t7cI=12/7/2025 1:32:45 PM12/7/2025 1:32:45 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>9MDMs5C7EXAQE9HGuDOYIO5Uwz4=12/7/2025 1:35:18 PM12/7/2025 1:35:18 PMPVNzDsNL4HV3UxEOD/fSdbs6Hvc=12/7/2025 1:35:18 PM12/7/2025 1:35:18 PM</TimeStamp>
+        <ID>
+          <String>BikeStores DW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>yck2NvCIxq9ZF1KUqb7L19Wwsk8=12/7/2025 9:41:46 AM12/7/2025 9:41:45 AM</TimeStamp>
+      <ID>
+        <String>PY3-BikeStores-Cube</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-12-07T19:39:54.44Z</LastDeployed>
+</DeploymentSnapshot>

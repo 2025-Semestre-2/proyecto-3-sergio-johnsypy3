@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{F888154B-3C06-4332-8C7F-3453657597F6}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{9E4EC1DF-C813-4167-813D-96CB9A939992}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -796,9 +796,21 @@ INNER JOIN production.products P ON S.product_id = P.product_id</property>
           Id="Package\Data Flow Task\OLE DB Source"
           TopLeft="229.5,5.49999999999989" />
         <NodeLayout
+          Size="150,40"
+          Id="Package\Data Flow Task\Insertar destino"
+          TopLeft="5.50000000000006,205.5" />
+        <NodeLayout
+          Size="182,40"
+          Id="Package\Data Flow Task\Comando de OLE DB 1"
+          TopLeft="451.5,205.5" />
+        <NodeLayout
           Size="208,40"
           Id="Package\Data Flow Task\Slowly Changing Dimension"
           TopLeft="199.5,105.5" />
+        <NodeLayout
+          Size="174,40"
+          Id="Package\Data Flow Task\Comando de OLE DB"
+          TopLeft="216.5,205.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="303.5,45.4999999999999">
@@ -821,10 +833,6 @@ INNER JOIN production.products P ON S.product_id = P.product_id</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150,40"
-          Id="Package\Data Flow Task\Insertar destino"
-          TopLeft="5.50000000000006,205.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[New Output]"
           TopLeft="253.5,145.5">
@@ -857,14 +865,10 @@ INNER JOIN production.products P ON S.product_id = P.product_id</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-113.56138671875,25.5063291139241,54.1227734375,11.43359375"
+              BoundingBox="-113.56138671875,25.5063291139241,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="174,40"
-          Id="Package\Data Flow Task\Comando de OLE DB"
-          TopLeft="216.5,205.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Inferred Member Updates Output]"
           TopLeft="303.5,145.5">
@@ -885,14 +889,10 @@ INNER JOIN production.products P ON S.product_id = P.product_id</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-74.3129882812499,20.4208984375,148.6259765625,11.658203125"
+              BoundingBox="-74.3129882812499,20.4208984375,148.8059765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="182,40"
-          Id="Package\Data Flow Task\Comando de OLE DB 1"
-          TopLeft="451.5,205.5" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Changing Attribute Updates Output]"
           TopLeft="353.5,145.5">
@@ -925,21 +925,13 @@ INNER JOIN production.products P ON S.product_id = P.product_id</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="16.0860937500001,25.5063291139241,156.8278125,11.6630859375"
+              BoundingBox="16.0860937500001,25.5063291139241,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Slowly Changing Dimension">
     <Properties>
@@ -987,6 +979,14 @@ INNER JOIN production.products P ON S.product_id = P.product_id</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
