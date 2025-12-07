@@ -1,15 +1,512 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" MustUnderstand="df">
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="BikeStores">
+      <DataSourceReference>BikeStores</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>b3aac559-0e8d-4333-be08-daf31b159667</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Sucursal">
+      <Query>
+        <DataSourceName>BikeStores</DataSourceName>
+        <CommandText>SELECT Sucursal
+FROM (
+    SELECT 'Todas las Sucursales' AS Sucursal, 0 AS Orden
+    UNION ALL
+    SELECT s.store_name as Sucursal, 1 AS Orden
+    FROM sales.stores s
+) AS X
+ORDER BY Orden, Sucursal;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Sucursal">
+          <DataField>Sucursal</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Categoria">
+      <Query>
+        <DataSourceName>BikeStores</DataSourceName>
+        <CommandText>SELECT Categoria
+FROM (
+    SELECT 'Todas las Categorias' AS Categoria, 0 AS Orden
+    UNION ALL
+    SELECT c.category_name AS Categoria, 1 AS Orden
+    FROM production.categories c
+) AS X
+ORDER BY Orden, Categoria;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Categoria">
+          <DataField>Categoria</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Marca">
+      <Query>
+        <DataSourceName>BikeStores</DataSourceName>
+        <CommandText>=IIf(
+    Parameters!Sucursal.Value = "Todas las Sucursales" And Parameters!Categoria.Value = "Todas las Categorias",
+
+    "SELECT Brand FROM (
+         SELECT 'Todas las Marcas' AS Brand, 0 AS Orden
+         UNION ALL
+         SELECT DISTINCT b.brand_name AS Brand, 1 AS Orden
+         FROM production.brands b
+         INNER JOIN production.products p ON p.brand_id = b.brand_id
+     ) AS X
+     ORDER BY Orden, Brand",
+
+IIf(
+    Parameters!Sucursal.Value = "Todas las Sucursales" And Parameters!Categoria.Value &lt;&gt; "Todas las Categorias",
+
+    "SELECT Brand FROM (
+         SELECT 'Todas las Marcas' AS Brand, 0 AS Orden
+         UNION ALL
+         SELECT DISTINCT b.brand_name AS Brand, 1 AS Orden
+         FROM production.brands b
+         INNER JOIN production.products p ON p.brand_id = b.brand_id
+         INNER JOIN production.categories c ON c.category_id = p.category_id
+         WHERE c.category_name = '" &amp; Parameters!Categoria.Value &amp; "'
+     ) AS X
+     ORDER BY Orden, Brand",
+
+IIf(
+    Parameters!Sucursal.Value &lt;&gt; "Todas las Sucursales" And Parameters!Categoria.Value = "Todas las Categorias",
+
+    "SELECT Brand FROM (
+         SELECT 'Todas las Marcas' AS Brand, 0 AS Orden
+         UNION ALL
+         SELECT DISTINCT b.brand_name AS Brand, 1 AS Orden
+         FROM production.brands b
+         INNER JOIN production.products p ON p.brand_id = b.brand_id
+         INNER JOIN sales.order_items oi ON oi.product_id = p.product_id
+         INNER JOIN sales.orders o ON o.order_id = oi.order_id
+         INNER JOIN sales.stores s ON s.store_id = o.store_id
+         WHERE s.store_name = '" &amp; Parameters!Sucursal.Value &amp; "'
+     ) AS X
+     ORDER BY Orden, Brand",
+
+    "SELECT Brand FROM (
+         SELECT 'Todas las Marcas' AS Brand, 0 AS Orden
+         UNION ALL
+         SELECT DISTINCT b.brand_name AS Brand, 1 AS Orden
+         FROM production.brands b
+         INNER JOIN production.products p ON p.brand_id = b.brand_id
+         INNER JOIN production.categories c ON c.category_id = p.category_id
+         INNER JOIN sales.order_items oi ON oi.product_id = p.product_id
+         INNER JOIN sales.orders o ON o.order_id = oi.order_id
+         INNER JOIN sales.stores s ON s.store_id = o.store_id
+         WHERE c.category_name = '" &amp; Parameters!Categoria.Value &amp; "' 
+           AND s.store_name = '" &amp; Parameters!Sucursal.Value &amp; "'
+     ) AS X
+     ORDER BY Orden, Brand"
+)))</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Brand">
+          <DataField>Brand</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="TotalInventarioProductoMarca">
+      <Query>
+        <DataSourceName>BikeStores</DataSourceName>
+        <CommandText>=IIf(
+    Parameters!Sucursal.Value = "Todas las Sucursales" And Parameters!Categoria.Value = "Todas las Categorias" And Parameters!Marca.Value = "Todas las Marcas",
+
+    "SELECT p.product_name AS Producto, b.brand_name AS Marca, SUM(st.quantity) AS Cantidad FROM production.stocks st INNER JOIN production.products p ON st.product_id = p.product_id INNER JOIN sales.stores s ON st.store_id = s.store_id INNER JOIN production.categories c ON p.category_id = c.category_id INNER JOIN production.brands b ON p.brand_id = b.brand_id GROUP BY p.product_name, b.brand_name",
+
+IIf(
+    Parameters!Sucursal.Value = "Todas las Sucursales" And Parameters!Categoria.Value = "Todas las Categorias" And Parameters!Marca.Value &lt;&gt; "Todas las Marcas",
+
+    "SELECT p.product_name AS Producto, b.brand_name AS Marca, SUM(st.quantity) AS Cantidad FROM production.stocks st INNER JOIN production.products p ON st.product_id = p.product_id INNER JOIN sales.stores s ON st.store_id = s.store_id INNER JOIN production.categories c ON p.category_id = c.category_id INNER JOIN production.brands b ON p.brand_id = b.brand_id WHERE b.brand_name = '" &amp; Parameters!Marca.Value &amp; "' GROUP BY p.product_name, b.brand_name",
+
+IIf(
+    Parameters!Sucursal.Value = "Todas las Sucursales" And Parameters!Categoria.Value &lt;&gt; "Todas las Categorias" And Parameters!Marca.Value = "Todas las Marcas",
+
+    "SELECT p.product_name AS Producto, b.brand_name AS Marca, SUM(st.quantity) AS Cantidad FROM production.stocks st INNER JOIN production.products p ON st.product_id = p.product_id INNER JOIN sales.stores s ON st.store_id = s.store_id INNER JOIN production.categories c ON p.category_id = c.category_id INNER JOIN production.brands b ON p.brand_id = b.brand_id WHERE c.category_name = '" &amp; Parameters!Categoria.Value &amp; "' GROUP BY p.product_name, b.brand_name",
+
+IIf(
+    Parameters!Sucursal.Value = "Todas las Sucursales" And Parameters!Categoria.Value &lt;&gt; "Todas las Categorias" And Parameters!Marca.Value &lt;&gt; "Todas las Marcas",
+
+    "SELECT p.product_name AS Producto, b.brand_name AS Marca, SUM(st.quantity) AS Cantidad FROM production.stocks st INNER JOIN production.products p ON st.product_id = p.product_id INNER JOIN sales.stores s ON st.store_id = s.store_id INNER JOIN production.categories c ON p.category_id = c.category_id INNER JOIN production.brands b ON p.brand_id = b.brand_id WHERE c.category_name = '" &amp; Parameters!Categoria.Value &amp; "' AND b.brand_name = '" &amp; Parameters!Marca.Value &amp; "' GROUP BY p.product_name, b.brand_name",
+
+IIf(
+    Parameters!Sucursal.Value &lt;&gt; "Todas las Sucursales" And Parameters!Categoria.Value = "Todas las Categorias" And Parameters!Marca.Value = "Todas las Marcas",
+
+    "SELECT p.product_name AS Producto, b.brand_name AS Marca, SUM(st.quantity) AS Cantidad FROM production.stocks st INNER JOIN production.products p ON st.product_id = p.product_id INNER JOIN sales.stores s ON st.store_id = s.store_id INNER JOIN production.categories c ON p.category_id = c.category_id INNER JOIN production.brands b ON p.brand_id = b.brand_id WHERE s.store_name = '" &amp; Parameters!Sucursal.Value &amp; "' GROUP BY p.product_name, b.brand_name",
+
+IIf(
+    Parameters!Sucursal.Value &lt;&gt; "Todas las Sucursales" And Parameters!Categoria.Value = "Todas las Categorias" And Parameters!Marca.Value &lt;&gt; "Todas las Marcas",
+
+    "SELECT p.product_name AS Producto, b.brand_name AS Marca, SUM(st.quantity) AS Cantidad FROM production.stocks st INNER JOIN production.products p ON st.product_id = p.product_id INNER JOIN sales.stores s ON st.store_id = s.store_id INNER JOIN production.categories c ON p.category_id = c.category_id INNER JOIN production.brands b ON p.brand_id = b.brand_id WHERE s.store_name = '" &amp; Parameters!Sucursal.Value &amp; "' AND b.brand_name = '" &amp; Parameters!Marca.Value &amp; "' GROUP BY p.product_name, b.brand_name",
+
+IIf(
+    Parameters!Sucursal.Value &lt;&gt; "Todas las Sucursales" And Parameters!Categoria.Value &lt;&gt; "Todas las Categorias" And Parameters!Marca.Value = "Todas las Marcas",
+
+    "SELECT p.product_name AS Producto, b.brand_name AS Marca, SUM(st.quantity) AS Cantidad FROM production.stocks st INNER JOIN production.products p ON st.product_id = p.product_id INNER JOIN sales.stores s ON st.store_id = s.store_id INNER JOIN production.categories c ON p.category_id = c.category_id INNER JOIN production.brands b ON p.brand_id = b.brand_id WHERE s.store_name = '" &amp; Parameters!Sucursal.Value &amp; "' AND c.category_name = '" &amp; Parameters!Categoria.Value &amp; "' GROUP BY p.product_name, b.brand_name",
+
+    "SELECT p.product_name AS Producto, b.brand_name AS Marca, SUM(st.quantity) AS Cantidad FROM production.stocks st INNER JOIN production.products p ON st.product_id = p.product_id INNER JOIN sales.stores s ON st.store_id = s.store_id INNER JOIN production.categories c ON p.category_id = c.category_id INNER JOIN production.brands b ON p.brand_id = b.brand_id WHERE s.store_name = '" &amp; Parameters!Sucursal.Value &amp; "' AND c.category_name = '" &amp; Parameters!Categoria.Value &amp; "' AND b.brand_name = '" &amp; Parameters!Marca.Value &amp; "' GROUP BY p.product_name, b.brand_name"
+)))))))</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Producto">
+          <DataField>Producto</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Marca">
+          <DataField>Marca</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Cantidad">
+          <DataField>Cantidad</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
+        <ReportItems>
+          <Tablix Name="Tablix2">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox15">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Producto</Value>
+                                <Style>
+                                  <FontSize>12pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox15</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox22">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Marca</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                  <FontSize>12pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox22</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.17028cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.981cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Cantidad">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Cantidad.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Cantidad</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="ColumnGroup">
+                    <GroupExpressions>
+                      <GroupExpression />
+                    </GroupExpressions>
+                  </Group>
+                  <TablixHeader>
+                    <Size>0.981cm</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox13">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Cantidad</Value>
+                                <Style>
+                                  <FontSize>12pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox13</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Producto">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Producto.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Producto.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>6.36791cm</Size>
+                    <CellContents>
+                      <Textbox Name="Producto">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Producto.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Producto</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>3.78411cm</Size>
+                        <CellContents>
+                          <Textbox Name="Marca">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!Marca.Value</Value>
+                                    <Style>
+                                      <FontFamily>Arial</FontFamily>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Marca</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>TotalInventarioProductoMarca</DataSetName>
+            <Top>1.24037cm</Top>
+            <Left>1.83303cm</Left>
+            <Height>1.962cm</Height>
+            <Width>13.3223cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
         <Height>2in</Height>
+        <Style />
       </Body>
       <Width>6.5in</Width>
       <Page>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
       </Page>
     </ReportSection>
   </ReportSections>
-  <rd:ReportTemplate>true</rd:ReportTemplate>
+  <ReportParameters>
+    <ReportParameter Name="Sucursal">
+      <DataType>String</DataType>
+      <Prompt>Sucursal</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Sucursal</DataSetName>
+          <ValueField>Sucursal</ValueField>
+          <LabelField>Sucursal</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Categoria">
+      <DataType>String</DataType>
+      <Prompt>Categoria</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Categoria</DataSetName>
+          <ValueField>Categoria</ValueField>
+          <LabelField>Categoria</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Marca">
+      <DataType>String</DataType>
+      <Prompt>Marca</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Marca</DataSetName>
+          <ValueField>Brand</ValueField>
+          <LabelField>Brand</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Sucursal</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Categoria</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Marca</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>5c07f162-193a-4a16-ab61-48cb633357c8</rd:ReportID>
 </Report>
