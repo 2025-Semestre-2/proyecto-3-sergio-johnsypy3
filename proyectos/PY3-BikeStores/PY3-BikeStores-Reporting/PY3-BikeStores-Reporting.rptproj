@@ -53,6 +53,7 @@
     <DataSource Include="BikeStoresDW.rds" />
   </ItemGroup>
   <ItemGroup>
+    <Report Include="Reporte de Inventario.rdl" />
     <Report Include="Reporte de Ventas.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />

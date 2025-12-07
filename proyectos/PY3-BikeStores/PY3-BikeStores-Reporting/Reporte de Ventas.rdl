@@ -17,7 +17,14 @@
     <DataSet Name="Cliente">
       <Query>
         <DataSourceName>BikeStoresDW</DataSourceName>
-        <CommandText>select distinct c.full_name as FullName from DimCustomers c order by c.full_name</CommandText>
+        <CommandText>SELECT FullName
+FROM (
+    SELECT 'Todos los Clientes' AS FullName, 0 AS Orden
+    UNION ALL
+    SELECT c.full_name AS FullName, 1 AS Orden
+    FROM DimCustomers c
+) AS X
+ORDER BY Orden, FullName;</CommandText>
       </Query>
       <Fields>
         <Field Name="FullName">
@@ -47,13 +54,55 @@
             <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT p.category_name AS categoria, p.product_name AS producto, SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
-FROM     FactOrders AS FO INNER JOIN
-                  DimProducts AS p ON FO.product_key = p.product_key INNER JOIN
-                  DimCustomers AS C ON FO.customer_key = C.customer_key INNER JOIN
-                  DimDate AS D ON FO.order_date_key = D.date_key
-WHERE  (C.full_name = ?) AND (p.brand_name = ?) AND (d.date BETWEEN ? AND ?)
-GROUP BY p.category_name, p.product_name</CommandText>
+        <CommandText>=IIf(
+    Parameters!Cliente.Value = "Todos los Clientes" And Parameters!Marca.Value = "Todas las Marcas",
+
+    "SELECT p.category_name AS categoria, p.product_name AS producto, 
+            SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
+     FROM FactOrders FO
+     INNER JOIN DimProducts p ON FO.product_key = p.product_key
+     INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+     INNER JOIN DimDate D ON FO.order_date_key = D.date_key
+     WHERE D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
+     GROUP BY p.category_name, p.product_name",
+
+IIf(
+    Parameters!Cliente.Value = "Todos los Clientes" And Parameters!Marca.Value &lt;&gt; "Todas las Marcas",
+
+    "SELECT p.category_name AS categoria, p.product_name AS producto, 
+            SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
+     FROM FactOrders FO
+     INNER JOIN DimProducts p ON FO.product_key = p.product_key
+     INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+     INNER JOIN DimDate D ON FO.order_date_key = D.date_key
+     WHERE p.brand_name = '" &amp; Parameters!Marca.Value &amp; "'
+       AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
+     GROUP BY p.category_name, p.product_name",
+
+IIf(
+    Parameters!Cliente.Value &lt;&gt; "Todos los Clientes" And Parameters!Marca.Value = "Todas las Marcas",
+
+    "SELECT p.category_name AS categoria, p.product_name AS producto, 
+            SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
+     FROM FactOrders FO
+     INNER JOIN DimProducts p ON FO.product_key = p.product_key
+     INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+     INNER JOIN DimDate D ON FO.order_date_key = D.date_key
+     WHERE C.full_name = '" &amp; Parameters!Cliente.Value &amp; "'
+       AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
+     GROUP BY p.category_name, p.product_name",
+
+    "SELECT p.category_name AS categoria, p.product_name AS producto, 
+            SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
+     FROM FactOrders FO
+     INNER JOIN DimProducts p ON FO.product_key = p.product_key
+     INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+     INNER JOIN DimDate D ON FO.order_date_key = D.date_key
+     WHERE C.full_name = '" &amp; Parameters!Cliente.Value &amp; "'
+       AND p.brand_name = '" &amp; Parameters!Marca.Value &amp; "'
+       AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
+     GROUP BY p.category_name, p.product_name"
+)))</CommandText>
       </Query>
       <Fields>
         <Field Name="categoria">
@@ -83,11 +132,28 @@ GROUP BY p.category_name, p.product_name</CommandText>
             <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>select distinct p.brand_name as Brand from DimProducts p
-inner join FactOrders FO on FO.product_key = p.product_key
-inner join DimCustomers C on FO.customer_key = C.customer_key
-where C.full_name = ?
-order by p.brand_name</CommandText>
+        <CommandText>=IIf(
+    Parameters!Cliente.Value = "Todos los Clientes",
+
+    "SELECT Brand FROM (
+         SELECT 'Todas las Marcas' AS Brand, 0 AS Orden
+         UNION ALL
+         SELECT DISTINCT brand_name AS Brand, 1 AS Orden
+         FROM DimProducts
+     ) AS X
+     ORDER BY Orden, Brand",
+
+    "SELECT Brand FROM (
+         SELECT 'Todas las Marcas' AS Brand, 0 AS Orden
+         UNION ALL
+         SELECT DISTINCT p.brand_name AS Brand, 1 AS Orden
+         FROM DimProducts p
+         INNER JOIN FactOrders FO ON FO.product_key = p.product_key
+         INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+         WHERE C.full_name = '" &amp; Parameters!Cliente.Value &amp; "'
+     ) AS X
+     ORDER BY Orden, Brand"
+)</CommandText>
       </Query>
       <Fields>
         <Field Name="Brand">
@@ -371,6 +437,7 @@ order by p.brand_name</CommandText>
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>#238c9c</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -423,7 +490,7 @@ order by p.brand_name</CommandText>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>VentasCantidadProductoCategoria</DataSetName>
-            <Top>3.03953cm</Top>
+            <Top>4.0132cm</Top>
             <Left>0.8382cm</Left>
             <Height>2.0255cm</Height>
             <Width>16.11716cm</Width>
@@ -448,6 +515,40 @@ order by p.brand_name</CommandText>
               </Border>
             </Style>
           </Image>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Cliente: " &amp; Parameters!Cliente.Value &amp; vbCrLf &amp;
+"Marca: " &amp; Parameters!Marca.Value &amp; vbCrLf &amp;
+"Fechas: " &amp; Format(Parameters!FechaInicio.Value, "dd/MM/yyyy") &amp; " - " &amp; Format(Parameters!FechaFin.Value, "dd/MM/yyyy")</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>2.91253cm</Top>
+            <Left>0.8382cm</Left>
+            <Height>0.6cm</Height>
+            <Width>6.73333cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>2.7735in</Height>
         <Style>
