@@ -7,6 +7,8 @@ Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "PY3-BikeStores", "PY3-BikeS
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "PY3-BikeStores-Reporting", "PY3-BikeStores-Reporting\PY3-BikeStores-Reporting.rptproj", "{66A9204B-6C47-46E7-A74C-0E10B95D23EF}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "PY3-BikeStores-Cube", "PY3-BikeStores-Cube\PY3-BikeStores-Cube.dwproj", "{D258A837-1E83-4855-AC06-8BE578766BF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -34,6 +36,18 @@ Global
 		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Release|Default.ActiveCfg = Release
 		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Release|Default.Build.0 = Release
 		{66A9204B-6C47-46E7-A74C-0E10B95D23EF}.Release|Default.Deploy.0 = Release
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Debug|Default.ActiveCfg = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Debug|Default.Build.0 = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Debug|Default.Deploy.0 = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.DebugLocal|Default.ActiveCfg = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.DebugLocal|Default.Build.0 = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.DebugLocal|Default.Deploy.0 = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Development|Default.ActiveCfg = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Development|Default.Build.0 = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Development|Default.Deploy.0 = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Release|Default.ActiveCfg = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Release|Default.Build.0 = Development
+		{D258A837-1E83-4855-AC06-8BE578766BF8}.Release|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -39,7 +39,7 @@ CREATE TABLE DimStocks ( --
 	stock_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     store_id INT NOT NULL,
     product_id INT NOT NULL,
-	product_name VARCHAR(255) NOT NULL
+	--product_name VARCHAR(255) NOT NULL
 )
 go
 
@@ -128,7 +128,6 @@ CREATE TABLE dbo.FactOrders (
 	--QuantityPerUnit nvarchar(40) not null, 
 	list_price_order DECIMAL(10,2) not null,
 	--UnitsInStock smallint not null,
-	quantity_stock INT not null, -- esto se ocupa?
 	quantity_order INT not null,
 	--Freight money not null, 
 	discount DECIMAL(5,2) NOT NULL,

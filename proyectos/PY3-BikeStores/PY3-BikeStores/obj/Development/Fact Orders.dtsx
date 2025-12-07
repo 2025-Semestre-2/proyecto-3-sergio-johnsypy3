@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{4FAD10AE-EF60-4A0C-8529-A236D5151C1D}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{EEBC6972-3CBE-41CC-9E45-BF173D854FFF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -262,12 +262,6 @@ where [refTable].[customer_id] = ?</property>
                   name="Entrada de destino de OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[quantity_stock]"
-                      cachedDataType="i4"
-                      cachedName="quantity_stock"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[quantity_stock]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[quantity_stock]" />
-                    <inputColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[quantity_order]"
                       cachedDataType="i4"
                       cachedName="quantity_order"
@@ -390,10 +384,6 @@ where [refTable].[customer_id] = ?</property>
                       name="list_price_order"
                       precision="10"
                       scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[quantity_stock]"
-                      dataType="i4"
-                      name="quantity_stock" />
                     <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[quantity_order]"
                       dataType="i4"
@@ -789,7 +779,6 @@ where [refTable].[order_id] = ?</property>
     o.required_date,
     ISNULL(o.shipped_date, '01/01/1900') AS shipped_date,
     oi.list_price AS unit_price_order,
-    st.quantity AS quantity_stock,
     oi.quantity AS quantity_order,
     oi.discount,
      CAST(oi.list_price - (oi.list_price * oi.discount) AS DECIMAL(10,2)) AS price_discount
@@ -798,7 +787,7 @@ INNER JOIN sales.order_items AS oi ON o.order_id = oi.order_id
 INNER JOIN production.products AS p ON oi.product_id = p.product_id
 INNER JOIN sales.stores AS s ON o.store_id = s.store_id
 INNER JOIN production.stocks AS st 
-    ON st.store_id = s.store_id AND st.product_id = oi.product_id;</property>
+ON st.store_id = s.store_id AND st.product_id = oi.product_id;</property>
                 <property
                   dataType="System.String"
                   description="Variable que contiene el comando SQL para ejecutar."
@@ -918,15 +907,6 @@ INNER JOIN production.stocks AS st
                       scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[quantity_stock]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[quantity_stock]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[quantity_stock]"
-                      name="quantity_stock"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[quantity_order]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
@@ -999,10 +979,6 @@ INNER JOIN production.stocks AS st
                       precision="10"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[quantity_stock]"
-                      dataType="i4"
-                      name="quantity_stock" />
-                    <externalMetadataColumn
                       refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[quantity_order]"
                       dataType="i4"
                       name="quantity_order" />
@@ -1072,11 +1048,6 @@ INNER JOIN production.stocks AS st
                       name="unit_price_order"
                       precision="10"
                       scale="2" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[quantity_stock]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[quantity_stock]"
-                      name="quantity_stock" />
                     <outputColumn
                       refId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[quantity_order]"
                       dataType="i4"
@@ -1746,180 +1717,6 @@ where [refTable].[staff_id] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Stocks"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
-              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
-              name="Stocks"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimStocks]</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimStocks]) [refTable]
-where [refTable].[product_id] = ? and [refTable].[store_id] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica el tipo de caché de la tabla de búsqueda."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indica si se debe hacer referencia a metadatos en formato XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="stock_key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="store_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="product_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="product_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="quantity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                  name="ParameterMap">#{Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_id]};#{Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[store_id]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Tarea Flujo de datos\Stocks.Connections[OleDbConnection]"
-                  connectionManagerID="{CF0D1902-D29F-4A42-B5BC-D56B57B90F83}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.BikeStoresDW]"
-                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Tarea Flujo de datos\Stocks.Inputs[Entrada de búsqueda]"
-                  name="Entrada de búsqueda">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Stocks.Inputs[Entrada de búsqueda].Columns[product_id]"
-                      cachedDataType="i4"
-                      cachedName="product_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[product_id]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
-                          name="JoinToReferenceColumn">product_id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Stocks.Inputs[Entrada de búsqueda].Columns[store_id]"
-                      cachedDataType="i4"
-                      cachedName="store_id"
-                      lineageId="Package\Tarea Flujo de datos\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[store_id]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
-                          name="JoinToReferenceColumn">store_id</property>
-                        <property
-                          dataType="System.Null"
-                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de entradas coincidentes de búsqueda]"
-                  errorOrTruncationOperation="Búsqueda"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Salida de entradas coincidentes de búsqueda"
-                  synchronousInputId="Package\Tarea Flujo de datos\Stocks.Inputs[Entrada de búsqueda]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de entradas coincidentes de búsqueda].Columns[stock_key]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copiar columna"
-                      lineageId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de entradas coincidentes de búsqueda].Columns[stock_key]"
-                      name="stock_key"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
-                          name="CopyFromReferenceColumn">stock_key</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de entradas no coincidentes de búsqueda]"
-                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
-                  exclusionGroup="1"
-                  name="Salida de entradas no coincidentes de búsqueda"
-                  synchronousInputId="Package\Tarea Flujo de datos\Stocks.Inputs[Entrada de búsqueda]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de error de búsqueda]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de búsqueda"
-                  synchronousInputId="Package\Tarea Flujo de datos\Stocks.Inputs[Entrada de búsqueda]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Tarea Flujo de datos\Stores"
               componentClassID="Microsoft.Lookup"
               contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
@@ -2091,39 +1888,34 @@ where [refTable].[store_id] = ?</property>
               startId="Package\Tarea Flujo de datos\Products.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda1]"
-              endId="Package\Tarea Flujo de datos\Stocks.Inputs[Entrada de búsqueda]"
-              name="Salida de entradas coincidentes de búsqueda"
-              startId="Package\Tarea Flujo de datos\Orders.Outputs[Salida de entradas coincidentes de búsqueda]" />
-            <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda2]"
-              endId="Package\Tarea Flujo de datos\Staffs.Inputs[Entrada de búsqueda]"
-              name="Salida de entradas coincidentes de búsqueda"
-              startId="Package\Tarea Flujo de datos\Stocks.Outputs[Salida de entradas coincidentes de búsqueda]" />
-            <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda3]"
-              endId="Package\Tarea Flujo de datos\Stores.Inputs[Entrada de búsqueda]"
-              name="Salida de entradas coincidentes de búsqueda"
-              startId="Package\Tarea Flujo de datos\Staffs.Outputs[Salida de entradas coincidentes de búsqueda]" />
-            <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda4]"
-              endId="Package\Tarea Flujo de datos\OrderDate.Inputs[Entrada de búsqueda]"
-              name="Salida de entradas coincidentes de búsqueda"
-              startId="Package\Tarea Flujo de datos\Stores.Outputs[Salida de entradas coincidentes de búsqueda]" />
-            <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda5]"
               endId="Package\Tarea Flujo de datos\RequiredDate.Inputs[Entrada de búsqueda]"
               name="Salida de entradas coincidentes de búsqueda"
               startId="Package\Tarea Flujo de datos\OrderDate.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda6]"
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda2]"
               endId="Package\Tarea Flujo de datos\ShippedDate.Inputs[Entrada de búsqueda]"
               name="Salida de entradas coincidentes de búsqueda"
               startId="Package\Tarea Flujo de datos\RequiredDate.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda7]"
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda3]"
               endId="Package\Tarea Flujo de datos\Destino de OLE DB.Inputs[Entrada de destino de OLE DB]"
               name="Salida de entradas coincidentes de búsqueda"
               startId="Package\Tarea Flujo de datos\ShippedDate.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda4]"
+              endId="Package\Tarea Flujo de datos\Stores.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Tarea Flujo de datos\Orders.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda5]"
+              endId="Package\Tarea Flujo de datos\OrderDate.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Tarea Flujo de datos\Staffs.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda6]"
+              endId="Package\Tarea Flujo de datos\Staffs.Inputs[Entrada de búsqueda]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Tarea Flujo de datos\Stores.Outputs[Salida de entradas coincidentes de búsqueda]" />
             <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
               endId="Package\Tarea Flujo de datos\Products.Inputs[Entrada de búsqueda]"
@@ -2147,7 +1939,7 @@ where [refTable].[store_id] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="176,42.6666666666667"
+          Size="176,42"
           Id="Package\Tarea Flujo de datos"
           TopLeft="395.624994104728,167.69999700129" />
       </GraphLayout>
@@ -2159,13 +1951,45 @@ where [refTable].[store_id] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\Origen de OLE DB"
-          TopLeft="138.749997932464,73.4499986866117" />
+          Size="144,42"
+          Id="Package\Tarea Flujo de datos\RequiredDate"
+          TopLeft="153.749997708947,163.799997071028" />
         <NodeLayout
-          Size="120,43.3333333333334"
+          Size="128,42"
+          Id="Package\Tarea Flujo de datos\Customers"
+          TopLeft="556.249991711229,74.7499986633659" />
+        <NodeLayout
+          Size="106,42"
+          Id="Package\Tarea Flujo de datos\Staffs"
+          TopLeft="563.124991608784,168.349996989667" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Tarea Flujo de datos\Orders"
+          TopLeft="732.4999890849,74.7499986633659" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Tarea Flujo de datos\Destino de OLE DB"
+          TopLeft="370.624994477257,249.599995536804" />
+        <NodeLayout
+          Size="104,40"
+          Id="Package\Tarea Flujo de datos\Stores"
+          TopLeft="734.374989056959,166.399997024536" />
+        <NodeLayout
+          Size="120,42"
           Id="Package\Tarea Flujo de datos\Products"
           TopLeft="374.374994421378,74.0999986749887" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Tarea Flujo de datos\ShippedDate"
+          TopLeft="156.874997662381,252.84999547869" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Tarea Flujo de datos\OrderDate"
+          TopLeft="370.624994477257,167.69999700129" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Tarea Flujo de datos\Origen de OLE DB"
+          TopLeft="138.749997932464,73.4499986866117" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
           TopLeft="304.083331265797,95.2749986808002">
@@ -2188,35 +2012,75 @@ where [refTable].[store_id] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.333333333334,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\Customers"
-          TopLeft="556.249991711229,74.7499986633659" />
-        <NodeLayout
-          Size="110.666666666667,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\Orders"
-          TopLeft="732.4999890849,74.7499986633659" />
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Match]"
-          TopLeft="685.583325044563,96.0833319966992">
+          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda3]"
+          TopLeft="294.874997662381,272.224995507747">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="46.916664040337,0"
+              EndConnector="75.749996814876,0"
               Start="0,0"
-              End="39.416664040337,0">
+              End="68.249996814876,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="39.416664040337,0" />
+                    End="68.249996814876,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-80.1106914173315,5,199.638046875,12.1953125"
+              BoundingBox="-65.5390250300618,5,199.328046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda2]"
+          TopLeft="225.812497685664,205.799997071028">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.0499984076617"
+              Start="0,0"
+              End="0,39.5499984076617">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5499984076617" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.6640234374998,13.6773429538308,199.328046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda1]"
+          TopLeft="370.624994477257,186.749997036159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-72.8749967683098,0"
+              Start="0,0"
+              End="-65.3749967683098,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-65.3749967683098,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-132.351521821655,5,199.328046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2240,203 +2104,103 @@ where [refTable].[store_id] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-72.6315247925745,5,199.638046875,12.1953125"
+              BoundingBox="-72.6315247925745,5,199.328046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="109.333333333334,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\Stocks"
-          TopLeft="733.749989066273,167.049997012913" />
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda1]"
-          TopLeft="788.124989075586,117.416665330033">
+          Id="Package\Tarea Flujo de datos.Paths[Match]"
+          TopLeft="685.583325044563,96.0833319966992">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.6333316828806"
+              EndConnector="46.916664040337,0"
               Start="0,0"
-              End="0,42.1333316828806">
+              End="39.416664040337,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.1333316828806" />
+                    End="39.416664040337,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-99.8190234375,14.9690095914403,199.638046875,12.1953125"
+              BoundingBox="-80.1106914173315,5,199.328046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="106.666666666667,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\Staffs"
-          TopLeft="560.624991646037,167.049997012913" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda2]"
-          TopLeft="733.749989066273,188.383330346247">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-66.45833075357,0"
-              Start="0,0"
-              End="-58.95833075357,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-58.95833075357,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-129.298188814285,5,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="109.333333333334,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\Stores"
-          TopLeft="374.999994412065,168.349996989667" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda3]"
-          TopLeft="560.624991646037,189.033330334624">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-76.2916639006384,0"
-              Start="0,0"
-              End="-68.7916639006384,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-68.7916639006384,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-134.214855387819,5,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="128,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\OrderDate"
-          TopLeft="188.124997196719,167.049997012913" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda4]"
-          TopLeft="374.999994412065,189.033330334624">
+          TopLeft="786.93748907093,116.749998663366">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-58.8749972153456,0"
+              EndConnector="0,49.6499983611697"
               Start="0,0"
-              End="-51.3749972153456,0">
+              End="0,42.1499983611697">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-51.3749972153456,0" />
+                    End="0,42.1499983611697" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-125.506522045173,5,199.638046875,12.1953125"
+              BoundingBox="-99.6640234374998,14.9773429305848,199.328046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="144,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\RequiredDate"
-          TopLeft="183.749997261912,261.299995327592" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda5]"
-          TopLeft="253.937497229315,209.71666367958">
+          TopLeft="563.124991608784,189.024996995479">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.583331648012"
+              EndConnector="-64.4999971315272,0"
               Start="0,0"
-              End="0,44.083331648012">
+              End="-56.9999971315272,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.083331648012" />
+                    End="-56.9999971315272,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-99.8190234375,15.944009574006,199.638046875,12.1953125"
+              BoundingBox="-128.164022003263,5,199.328046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="139.333333333334,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\ShippedDate"
-          TopLeft="371.874994458631,262.599995304346" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda6]"
-          TopLeft="327.749997261912,283.283328649302">
+          TopLeft="734.374989056959,187.874997007101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.1249971967192,0"
+              EndConnector="-65.2499974481755,0"
               Start="0,0"
-              End="36.6249971967192,0">
+              End="-57.7499974481755,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="36.6249971967192,0" />
+                    End="-57.7499974481755,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-81.5065248391404,5,199.638046875,12.1953125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="169.333333333334,42.6666666666667"
-          Id="Package\Tarea Flujo de datos\Destino de OLE DB"
-          TopLeft="599.999991059303,262.599995304346" />
-        <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de entradas coincidentes de búsqueda7]"
-          TopLeft="511.208327791964,283.93332863768">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="88.7916632673392,0"
-              Start="0,0"
-              End="81.2916632673392,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="81.2916632673392,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-59.1731918038304,5,199.638046875,12.1953125"
+              BoundingBox="-128.539022161588,5,199.328046875,12.1953125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2444,30 +2208,22 @@ where [refTable].[store_id] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen de OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Products">
+    design-time-name="Package\Tarea Flujo de datos\RequiredDate">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimProducts]</Value>
+          type="q3:string">[dbo].[DimDate]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2480,7 +2236,7 @@ where [refTable].[store_id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2490,53 +2246,7 @@ where [refTable].[store_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Orders">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimOrders]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Stocks">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimStocks]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2549,7 +2259,7 @@ where [refTable].[store_id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2559,7 +2269,7 @@ where [refTable].[store_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2567,91 +2277,22 @@ where [refTable].[store_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Stores">
+    design-time-name="Package\Tarea Flujo de datos\Orders">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimStores]</Value>
+          type="q3:string">[dbo].[DimOrders]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\OrderDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\RequiredDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\ShippedDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2668,6 +2309,106 @@ where [refTable].[store_id] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Stores">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimStores]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Products">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimProducts]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\ShippedDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\OrderDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
