@@ -8,12 +8,12 @@
   </Database>
   <Cubes>
     <ProjectItem>
-      <Name>BikeStores DW.cube</Name>
-      <FullPath>BikeStores DW.cube</FullPath>
+      <Name>BikeStores DW 1.cube</Name>
+      <FullPath>BikeStores DW 1.cube</FullPath>
       <Dependencies>
         <ProjectItem>
-          <Name>BikeStores DW.partitions</Name>
-          <FullPath>BikeStores DW.partitions</FullPath>
+          <Name>BikeStores DW 1.partitions</Name>
+          <FullPath>BikeStores DW 1.partitions</FullPath>
         </ProjectItem>
       </Dependencies>
     </ProjectItem>

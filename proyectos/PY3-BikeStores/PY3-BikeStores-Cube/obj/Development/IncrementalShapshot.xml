@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>xnQR+ICWKFJSUy3ZUR/GEE81vUA=12/7/2025 6:40:58 PM12/7/2025 11:43:52 AM</TimeStamp>
+        <TimeStamp>iLGAqykcHxlfaRc/vH5oyrVUTHE=12/8/2025 12:20:37 PM12/7/2025 11:43:52 AM</TimeStamp>
         <ID>
           <String>BikeStores DW</String>
         </ID>
@@ -40,21 +40,21 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>WFyAZqvjVKD0dlYKq6hkzTOB5Fc=12/7/2025 5:57:20 PM12/7/2025 5:34:30 PM</TimeStamp>
+        <TimeStamp>vu02NiU37qJX2kbgBTqDPd5trBQ=12/8/2025 12:54:13 PM12/7/2025 5:34:30 PM</TimeStamp>
         <ID>
           <String>Dim Products</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>GibQBUCzdeAp7kyXifDqmmT017s=12/7/2025 6:00:03 PM12/7/2025 5:57:20 PM</TimeStamp>
+        <TimeStamp>GcpA7e/B7iIuPI+LIJ/GJYLj9OM=12/8/2025 12:20:37 PM12/7/2025 5:57:20 PM</TimeStamp>
         <ID>
           <String>Dim Customers</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>g2qkNbkhgbA21eCSyI1Xocs4Ctw=12/7/2025 6:13:32 PM12/7/2025 6:00:03 PM</TimeStamp>
+        <TimeStamp>TmAQC09qTFcfK+jP1lkUB3LrGWk=12/8/2025 9:00:14 AM12/7/2025 6:00:03 PM</TimeStamp>
         <ID>
           <String>Dim Staffs</String>
         </ID>
@@ -75,7 +75,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ux/wcSpyxQRIHqwImUM3qnGM0cY=12/7/2025 7:28:43 PM12/7/2025 7:19:24 PM</TimeStamp>
+        <TimeStamp>ux/wcSpyxQRIHqwImUM3qnGM0cY=12/8/2025 12:20:37 PM12/7/2025 7:19:24 PM</TimeStamp>
         <ID>
           <String>Dim Date</String>
         </ID>
@@ -89,7 +89,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>rlnBVXq3F4zCtjruaX5QuG7HgrM=12/7/2025 7:34:02 PM12/7/2025 7:34:02 PMYH5QmeefJ/Mfjv/MX/U6Wr1ziSg=12/7/2025 7:34:02 PM12/7/2025 7:34:02 PM</TimeStamp>
+        <TimeStamp>0ewS2+k8sCa8EV1c5sepZlq71WE=12/8/2025 12:51:37 PM12/8/2025 12:51:37 PM1pw7229/zH58xA1Ty5VpFsbRQr4=12/8/2025 12:51:37 PM12/8/2025 12:51:37 PM</TimeStamp>
         <ID>
           <String>BikeStores DW</String>
         </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-12-08T01:34:18.066667Z</LastDeployed>
+  <LastDeployed>2025-12-08T18:57:33.28Z</LastDeployed>
 </DeploymentSnapshot>
