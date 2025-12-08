@@ -54,55 +54,95 @@ ORDER BY Orden, FullName;</CommandText>
             <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>=IIf(
+        <CommandText>=Switch(
     Parameters!Cliente.Value = "Todos los Clientes" And Parameters!Marca.Value = "Todas las Marcas",
+    "SELECT 
+        CASE
+            WHEN GROUPING(p.category_name) = 1 AND GROUPING(p.product_name) = 1 THEN 'Total general'
+            WHEN GROUPING(p.product_name) = 1 THEN p.category_name
+            ELSE p.category_name 
+        END AS categoria,
+        CASE
+            WHEN GROUPING(p.category_name) = 1 AND GROUPING(p.product_name) = 1 THEN ''
+            WHEN GROUPING(p.product_name) = 1 THEN 'Subtotal por ' + p.category_name
+            ELSE p.product_name 
+        END AS producto,
+        SUM(FO.quantity_order) AS cantidad,
+        SUM(FO.price_discount) AS total
+    FROM FactOrders FO
+    INNER JOIN DimProducts p ON FO.product_key = p.product_key
+    INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+    INNER JOIN DimDate D ON FO.order_date_key = D.date_key
+    WHERE D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
+    GROUP BY ROLLUP(p.category_name, p.product_name)",
 
-    "SELECT p.category_name AS categoria, p.product_name AS producto, 
-            SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
-     FROM FactOrders FO
-     INNER JOIN DimProducts p ON FO.product_key = p.product_key
-     INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
-     INNER JOIN DimDate D ON FO.order_date_key = D.date_key
-     WHERE D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
-     GROUP BY p.category_name, p.product_name",
-
-IIf(
     Parameters!Cliente.Value = "Todos los Clientes" And Parameters!Marca.Value &lt;&gt; "Todas las Marcas",
+    "SELECT 
+        CASE
+            WHEN GROUPING(p.category_name) = 1 AND GROUPING(p.product_name) = 1 THEN 'Total general'
+            WHEN GROUPING(p.product_name) = 1 THEN p.category_name
+            ELSE p.category_name 
+        END AS categoria,
+        CASE
+            WHEN GROUPING(p.category_name) = 1 AND GROUPING(p.product_name) = 1 THEN ''
+            WHEN GROUPING(p.product_name) = 1 THEN 'Subtotal por ' + p.category_name
+            ELSE p.product_name 
+        END AS producto,
+        SUM(FO.quantity_order) AS cantidad,
+        SUM(FO.price_discount) AS total
+    FROM FactOrders FO
+    INNER JOIN DimProducts p ON FO.product_key = p.product_key
+    INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+    INNER JOIN DimDate D ON FO.order_date_key = D.date_key
+    WHERE p.brand_name = '" &amp; Parameters!Marca.Value &amp; "' 
+      AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
+    GROUP BY ROLLUP(p.category_name, p.product_name)",
 
-    "SELECT p.category_name AS categoria, p.product_name AS producto, 
-            SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
-     FROM FactOrders FO
-     INNER JOIN DimProducts p ON FO.product_key = p.product_key
-     INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
-     INNER JOIN DimDate D ON FO.order_date_key = D.date_key
-     WHERE p.brand_name = '" &amp; Parameters!Marca.Value &amp; "'
-       AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
-     GROUP BY p.category_name, p.product_name",
-
-IIf(
     Parameters!Cliente.Value &lt;&gt; "Todos los Clientes" And Parameters!Marca.Value = "Todas las Marcas",
+    "SELECT 
+        CASE
+            WHEN GROUPING(p.category_name) = 1 AND GROUPING(p.product_name) = 1 THEN 'Total general'
+            WHEN GROUPING(p.product_name) = 1 THEN p.category_name
+            ELSE p.category_name 
+        END AS categoria,
+        CASE
+            WHEN GROUPING(p.category_name) = 1 AND GROUPING(p.product_name) = 1 THEN ''
+            WHEN GROUPING(p.product_name) = 1 THEN 'Subtotal por ' + p.category_name
+            ELSE p.product_name 
+        END AS producto,
+        SUM(FO.quantity_order) AS cantidad,
+        SUM(FO.price_discount) AS total
+    FROM FactOrders FO
+    INNER JOIN DimProducts p ON FO.product_key = p.product_key
+    INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+    INNER JOIN DimDate D ON FO.order_date_key = D.date_key
+    WHERE C.full_name = '" &amp; Parameters!Cliente.Value &amp; "' 
+      AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
+    GROUP BY ROLLUP(p.category_name, p.product_name)",
 
-    "SELECT p.category_name AS categoria, p.product_name AS producto, 
-            SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
-     FROM FactOrders FO
-     INNER JOIN DimProducts p ON FO.product_key = p.product_key
-     INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
-     INNER JOIN DimDate D ON FO.order_date_key = D.date_key
-     WHERE C.full_name = '" &amp; Parameters!Cliente.Value &amp; "'
-       AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
-     GROUP BY p.category_name, p.product_name",
-
-    "SELECT p.category_name AS categoria, p.product_name AS producto, 
-            SUM(FO.quantity_order) AS cantidad, SUM(FO.price_discount) AS total
-     FROM FactOrders FO
-     INNER JOIN DimProducts p ON FO.product_key = p.product_key
-     INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
-     INNER JOIN DimDate D ON FO.order_date_key = D.date_key
-     WHERE C.full_name = '" &amp; Parameters!Cliente.Value &amp; "'
-       AND p.brand_name = '" &amp; Parameters!Marca.Value &amp; "'
-       AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
-     GROUP BY p.category_name, p.product_name"
-)))</CommandText>
+    True,
+    "SELECT 
+        CASE
+            WHEN GROUPING(p.category_name) = 1 AND GROUPING(p.product_name) = 1 THEN 'Total general'
+            WHEN GROUPING(p.product_name) = 1 THEN p.category_name
+            ELSE p.category_name 
+        END AS categoria,
+        CASE
+            WHEN GROUPING(p.category_name) = 1 AND GROUPING(p.product_name) = 1 THEN ''
+            WHEN GROUPING(p.product_name) = 1 THEN 'Subtotal por ' + p.category_name
+            ELSE p.product_name 
+        END AS producto,
+        SUM(FO.quantity_order) AS cantidad,
+        SUM(FO.price_discount) AS total
+    FROM FactOrders FO
+    INNER JOIN DimProducts p ON FO.product_key = p.product_key
+    INNER JOIN DimCustomers C ON FO.customer_key = C.customer_key
+    INNER JOIN DimDate D ON FO.order_date_key = D.date_key
+    WHERE C.full_name = '" &amp; Parameters!Cliente.Value &amp; "' 
+      AND p.brand_name = '" &amp; Parameters!Marca.Value &amp; "' 
+      AND D.date BETWEEN '" &amp; Parameters!FechaInicio.Value &amp; "' AND '" &amp; Parameters!FechaFin.Value &amp; "'
+    GROUP BY ROLLUP(p.category_name, p.product_name)"
+)</CommandText>
       </Query>
       <Fields>
         <Field Name="categoria">
