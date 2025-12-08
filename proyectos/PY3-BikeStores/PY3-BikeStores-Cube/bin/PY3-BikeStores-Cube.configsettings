@@ -12,13 +12,10 @@
     </DataSources>
     <Dimensions>
       <Dimension>
-        <ID>Dim Products</ID>
-      </Dimension>
-      <Dimension>
         <ID>Dim Stores</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Orders</ID>
+        <ID>Dim Products</ID>
       </Dimension>
       <Dimension>
         <ID>Dim Customers</ID>
@@ -27,13 +24,16 @@
         <ID>Dim Staffs</ID>
       </Dimension>
       <Dimension>
+        <ID>Dim Orders</ID>
+      </Dimension>
+      <Dimension>
         <ID>Dim Stocks</ID>
       </Dimension>
       <Dimension>
-        <ID>Fact Orders</ID>
+        <ID>Dim Date</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Date</ID>
+        <ID>Fact Orders</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

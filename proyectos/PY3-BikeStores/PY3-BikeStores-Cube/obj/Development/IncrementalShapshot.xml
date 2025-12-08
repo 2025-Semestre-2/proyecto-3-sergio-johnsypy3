@@ -26,16 +26,9 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>hluc/LRfQ5ugHm60DOZe72v4JTk=12/7/2025 1:23:05 PM12/7/2025 11:43:52 AM</TimeStamp>
+        <TimeStamp>xnQR+ICWKFJSUy3ZUR/GEE81vUA=12/7/2025 6:40:58 PM12/7/2025 11:43:52 AM</TimeStamp>
         <ID>
           <String>BikeStores DW</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>uxX6bIElgVvnispv+uYkqu008GI=12/7/2025 12:44:08 PM12/7/2025 11:48:42 AM</TimeStamp>
-        <ID>
-          <String>Dim Products</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
@@ -47,49 +40,56 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>5Mvfaime+vXjAFPRnr1WpB6JEro=12/7/2025 12:27:14 PM12/7/2025 12:24:18 PM</TimeStamp>
+        <TimeStamp>WFyAZqvjVKD0dlYKq6hkzTOB5Fc=12/7/2025 5:57:20 PM12/7/2025 5:34:30 PM</TimeStamp>
         <ID>
-          <String>Dim Orders</String>
+          <String>Dim Products</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>d5+FRRD0VRBE28ahjnPHBA5+wKM=12/7/2025 12:44:08 PM12/7/2025 12:27:14 PM</TimeStamp>
+        <TimeStamp>GibQBUCzdeAp7kyXifDqmmT017s=12/7/2025 6:00:03 PM12/7/2025 5:57:20 PM</TimeStamp>
         <ID>
           <String>Dim Customers</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>hP9X0tBv8lLTqQlATZyepw7f9/E=12/7/2025 12:58:07 PM12/7/2025 12:49:00 PM</TimeStamp>
+        <TimeStamp>g2qkNbkhgbA21eCSyI1Xocs4Ctw=12/7/2025 6:13:32 PM12/7/2025 6:00:03 PM</TimeStamp>
         <ID>
           <String>Dim Staffs</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>rk/j3F4aGsxVajP7n3rbjJX/R2o=12/7/2025 1:23:05 PM12/7/2025 1:23:05 PM</TimeStamp>
+        <TimeStamp>TsodGuFdjv930wuPp9lrLgTDTMM=12/7/2025 6:28:29 PM12/7/2025 6:14:11 PM</TimeStamp>
+        <ID>
+          <String>Dim Orders</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>9+1sqwJZIEanl2fHr1pofVESVQQ=12/7/2025 6:43:07 PM12/7/2025 6:40:58 PM</TimeStamp>
         <ID>
           <String>Dim Stocks</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>YBzlT4p8muwOUtAJmArm95WGOwg=12/7/2025 1:30:02 PM12/7/2025 1:30:01 PM</TimeStamp>
-        <ID>
-          <String>Fact Orders</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>d6PJ4kF1zomOQcEws4icMc7t7cI=12/7/2025 1:32:45 PM12/7/2025 1:32:45 PM</TimeStamp>
+        <TimeStamp>ux/wcSpyxQRIHqwImUM3qnGM0cY=12/7/2025 7:28:43 PM12/7/2025 7:19:24 PM</TimeStamp>
         <ID>
           <String>Dim Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dkfzvcN1X6OiN8Nik3zvGRY2Uq4=12/7/2025 7:29:44 PM12/7/2025 7:28:43 PM</TimeStamp>
+        <ID>
+          <String>Fact Orders</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>9MDMs5C7EXAQE9HGuDOYIO5Uwz4=12/7/2025 1:35:18 PM12/7/2025 1:35:18 PMPVNzDsNL4HV3UxEOD/fSdbs6Hvc=12/7/2025 1:35:18 PM12/7/2025 1:35:18 PM</TimeStamp>
+        <TimeStamp>rlnBVXq3F4zCtjruaX5QuG7HgrM=12/7/2025 7:34:02 PM12/7/2025 7:34:02 PMYH5QmeefJ/Mfjv/MX/U6Wr1ziSg=12/7/2025 7:34:02 PM12/7/2025 7:34:02 PM</TimeStamp>
         <ID>
           <String>BikeStores DW</String>
         </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-12-07T19:39:54.44Z</LastDeployed>
+  <LastDeployed>2025-12-08T01:34:18.066667Z</LastDeployed>
 </DeploymentSnapshot>

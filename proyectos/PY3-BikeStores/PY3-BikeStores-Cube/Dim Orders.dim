@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1aff3842-67e4-4f0b-b820-644838af7532" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5e093e3f-8571-4697-947f-71691ccf3462" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Orders</ID>
   <Name>Dim Orders</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-7373" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16633" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-7285" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
             </font>
@@ -51,7 +51,7 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-7373</Value>
+      <Value>-7285</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -68,46 +68,52 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="12e70016-fe7a-4017-9975-c73847676724">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="537ce178-23fb-4661-948d-8a496089a040">
     <DataSourceViewID>BikeStores DW</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="0ef1bb45-dbeb-4b13-8b94-a8087866c2bb">
+  <ErrorConfiguration dwd:design-time-name="7d3eedf3-205a-4d56-9883-0b4dc0dfd0cb">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="8d628f34-25c8-4bc6-b1c2-4c7c3579b91f">
+    <Attribute dwd:design-time-name="38ac5749-2454-4b36-9d46-ab916b0f3ce3">
       <ID>Order Key</ID>
-      <Name>Order Key</Name>
+      <Name>Order ID</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="9c6f1a0e-39b4-474a-b331-602a8634fa9e">
+        <KeyColumn dwd:design-time-name="db4c0436-4baf-4783-b084-423f5b886d49">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="9e2d4557-9391-4f31-8c52-b629c44b4508">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="befd2eed-174c-4bdf-8243-0755f0629759">
             <TableID>dbo_DimOrders</TableID>
             <ColumnID>order_key</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
+      <NameColumn dwd:design-time-name="689e5fc4-1f6c-444b-ae80-d0c2cb77d1f8">
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7232a391-1596-4bd9-98ff-a0536cf4ad11">
+          <TableID>dbo_DimOrders</TableID>
+          <ColumnID>order_id</ColumnID>
+        </Source>
+      </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="7db0b0ff-d56f-4dc6-a657-b8069f8c0781">
+        <AttributeRelationship dwd:design-time-name="27b8317d-5cf4-4923-8193-da720587a9e7">
           <AttributeID>Order Status</AttributeID>
           <Name>Order Status</Name>
         </AttributeRelationship>
       </AttributeRelationships>
-      <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="640471d3-4142-49b3-a5f9-ef872d2956fe">
+    <Attribute dwd:design-time-name="a42bd495-7774-4cec-8e46-51afeafdb50f">
       <ID>Order Status</ID>
       <Name>Order Status</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="47dea13f-037d-4ac2-9f07-68c61c37df32">
+        <KeyColumn dwd:design-time-name="5879f72c-27b1-4508-8272-a7e009877dfb">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="6664017b-93d6-4f64-a444-c31ca734b826">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="043a13dc-6af1-4755-8dc0-2d86afee0915">
             <TableID>dbo_DimOrders</TableID>
             <ColumnID>order_status</ColumnID>
           </Source>
@@ -118,23 +124,5 @@
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
   </Attributes>
-  <Hierarchies>
-    <Hierarchy dwd:design-time-name="5546eb7c-d5f9-4228-b195-a80d43e48824">
-      <ID>Jerarquía</ID>
-      <Name>Jerarquía por Status</Name>
-      <Levels>
-        <Level dwd:design-time-name="29931098-cca2-4083-92fd-db788de02fac">
-          <ID>Order Status</ID>
-          <Name>Order Status</Name>
-          <SourceAttributeID>Order Status</SourceAttributeID>
-        </Level>
-        <Level dwd:design-time-name="ec55382c-1c32-4262-bb11-9be7bdb658cd">
-          <ID>Order Key</ID>
-          <Name>Order Key</Name>
-          <SourceAttributeID>Order Key</SourceAttributeID>
-        </Level>
-      </Levels>
-    </Hierarchy>
-  </Hierarchies>
   <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
 </Dimension>

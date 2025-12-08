@@ -20,16 +20,12 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Dim Products.dim</Name>
-      <FullPath>Dim Products.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim Stores.dim</Name>
       <FullPath>Dim Stores.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Orders.dim</Name>
-      <FullPath>Dim Orders.dim</FullPath>
+      <Name>Dim Products.dim</Name>
+      <FullPath>Dim Products.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Dim Customers.dim</Name>
@@ -40,16 +36,20 @@
       <FullPath>Dim Staffs.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Dim Orders.dim</Name>
+      <FullPath>Dim Orders.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Dim Stocks.dim</Name>
       <FullPath>Dim Stocks.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Fact Orders.dim</Name>
-      <FullPath>Fact Orders.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim Date.dim</Name>
       <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Fact Orders.dim</Name>
+      <FullPath>Fact Orders.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

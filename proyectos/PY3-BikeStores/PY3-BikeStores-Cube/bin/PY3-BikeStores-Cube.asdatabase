@@ -12,271 +12,6 @@
   </DataSourceImpersonationInfo>
   <Dimensions>
     <Dimension>
-      <ID>Dim Products</ID>
-      <Name>Dim Products</Name>
-      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
-      <Annotations>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
-          <Value>
-            <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2820" scrolltop="-5961" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16633" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
-                <font>
-                  <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
-                </font>
-                <mouseicon>
-                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
-                </mouseicon>
-              </diagram>
-              <layoutmanager>
-                <ddsxmlobj />
-              </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimProducts" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3016" height="4710" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e0000c80b000066120000" />
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_DimProducts" vartype="8" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <shape groupshapeid="0" groupnode="0" />
-              </ddscontrol>
-            </dds>
-          </Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
-          <Value>true</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
-          <Value>false</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
-          <Value>true</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-          <Value>-2820</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>-5961</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-          <Value>20</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
-          <Value>0</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
-          <Value>100</Value>
-        </Annotation>
-      </Annotations>
-      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Source xsi:type="DataSourceViewBinding">
-        <DataSourceViewID>BikeStores DW</DataSourceViewID>
-      </Source>
-      <ErrorConfiguration>
-        <KeyNotFound>ReportAndStop</KeyNotFound>
-        <KeyDuplicate>ReportAndStop</KeyDuplicate>
-        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
-      </ErrorConfiguration>
-      <CurrentStorageMode>Molap</CurrentStorageMode>
-      <Attributes>
-        <Attribute>
-          <ID>Product Key</ID>
-          <Name>Product Name</Name>
-          <Usage>Key</Usage>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Integer</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimProducts</TableID>
-                <ColumnID>product_key</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <NameColumn>
-            <DataType>WChar</DataType>
-            <DataSize>255</DataSize>
-            <Source xsi:type="ColumnBinding">
-              <TableID>dbo_DimProducts</TableID>
-              <ColumnID>product_name</ColumnID>
-            </Source>
-          </NameColumn>
-          <AttributeRelationships>
-            <AttributeRelationship>
-              <AttributeID>Brand Name</AttributeID>
-              <Name>Brand Name</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Category Name</AttributeID>
-              <Name>Category Name</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Model Year</AttributeID>
-              <Name>Model Year</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>List Price</AttributeID>
-              <Name>List Price</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Start Date</AttributeID>
-              <Name>Start Date</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>End Date</AttributeID>
-              <Name>End Date</Name>
-            </AttributeRelationship>
-          </AttributeRelationships>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Brand Name</ID>
-          <Name>Brand Name</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>255</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimProducts</TableID>
-                <ColumnID>brand_name</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Category Name</ID>
-          <Name>Category Name</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>255</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimProducts</TableID>
-                <ColumnID>category_name</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Model Year</ID>
-          <Name>Model Year</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>SmallInt</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimProducts</TableID>
-                <ColumnID>model_year</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>List Price</ID>
-          <Name>List Price</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Double</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimProducts</TableID>
-                <ColumnID>list_price</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Start Date</ID>
-          <Name>Start Date</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Date</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimProducts</TableID>
-                <ColumnID>start_date</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>End Date</ID>
-          <Name>End Date</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Date</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimProducts</TableID>
-                <ColumnID>end_date</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-      </Attributes>
-      <Hierarchies>
-        <Hierarchy>
-          <ID>Jerarquía</ID>
-          <Name>Jerarquía por Category</Name>
-          <Levels>
-            <Level>
-              <ID>Category Name</ID>
-              <Name>Category Name</Name>
-              <SourceAttributeID>Category Name</SourceAttributeID>
-            </Level>
-            <Level>
-              <ID>Product Name</ID>
-              <Name>Product Name</Name>
-              <SourceAttributeID>Product Key</SourceAttributeID>
-            </Level>
-          </Levels>
-        </Hierarchy>
-        <Hierarchy>
-          <ID>Jerarquía 1</ID>
-          <Name>Jerarquía</Name>
-          <Levels>
-            <Level>
-              <ID>Brand Name</ID>
-              <Name>Brand Name</Name>
-              <SourceAttributeID>Brand Name</SourceAttributeID>
-            </Level>
-            <Level>
-              <ID>Product Name</ID>
-              <Name>Product Name</Name>
-              <SourceAttributeID>Product Key</SourceAttributeID>
-            </Level>
-          </Levels>
-        </Hierarchy>
-      </Hierarchies>
-      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
-    </Dimension>
-    <Dimension>
       <ID>Dim Stores</ID>
       <Name>Dim Stores</Name>
       <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
@@ -286,9 +21,9 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-6843" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-6843" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="0" y="0" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
-                  <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                  <ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" />
                 </font>
                 <mouseicon>
                   <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -511,8 +246,8 @@
       <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
     </Dimension>
     <Dimension>
-      <ID>Dim Orders</ID>
-      <Name>Dim Orders</Name>
+      <ID>Dim Products</ID>
+      <Name>Dim Products</Name>
       <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
       <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
       <Annotations>
@@ -520,7 +255,7 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-7373" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2820" scrolltop="-5873" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
                   <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
                 </font>
@@ -531,13 +266,13 @@
               <layoutmanager>
                 <ddsxmlobj />
               </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimOrders" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimProducts" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3016" height="4710" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005f070000" />
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000c80b000066120000" />
                 </control>
                 <layoutobject>
                   <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_DimOrders" vartype="8" />
+                    <property name="LogicalObject" value="dbo_DimProducts" vartype="8" />
                   </ddsxmlobj>
                 </layoutobject>
                 <shape groupshapeid="0" groupnode="0" />
@@ -559,11 +294,11 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-          <Value>-2828</Value>
+          <Value>-2820</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>-7373</Value>
+          <Value>-5873</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -591,37 +326,106 @@
       <CurrentStorageMode>Molap</CurrentStorageMode>
       <Attributes>
         <Attribute>
-          <ID>Order Key</ID>
-          <Name>Order Key</Name>
+          <ID>Product Key</ID>
+          <Name>Product Name</Name>
           <Usage>Key</Usage>
           <KeyColumns>
             <KeyColumn>
               <DataType>Integer</DataType>
               <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimOrders</TableID>
-                <ColumnID>order_key</ColumnID>
+                <TableID>dbo_DimProducts</TableID>
+                <ColumnID>product_key</ColumnID>
               </Source>
             </KeyColumn>
           </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <DataSize>255</DataSize>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_DimProducts</TableID>
+              <ColumnID>product_name</ColumnID>
+            </Source>
+          </NameColumn>
           <AttributeRelationships>
             <AttributeRelationship>
-              <AttributeID>Order Status</AttributeID>
-              <Name>Order Status</Name>
+              <AttributeID>Brand Name</AttributeID>
+              <Name>Brand Name</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Category Name</AttributeID>
+              <Name>Category Name</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Model Year</AttributeID>
+              <Name>Model Year</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>List Price</AttributeID>
+              <Name>List Price</Name>
             </AttributeRelationship>
           </AttributeRelationships>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Brand Name</ID>
+          <Name>Brand Name</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimProducts</TableID>
+                <ColumnID>brand_name</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
           <OrderBy>Key</OrderBy>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
         </Attribute>
         <Attribute>
-          <ID>Order Status</ID>
-          <Name>Order Status</Name>
+          <ID>Category Name</ID>
+          <Name>Category Name</Name>
           <KeyColumns>
             <KeyColumn>
-              <DataType>Integer</DataType>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
               <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimOrders</TableID>
-                <ColumnID>order_status</ColumnID>
+                <TableID>dbo_DimProducts</TableID>
+                <ColumnID>category_name</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Model Year</ID>
+          <Name>Model Year</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>SmallInt</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimProducts</TableID>
+                <ColumnID>model_year</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>List Price</ID>
+          <Name>List Price</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimProducts</TableID>
+                <ColumnID>list_price</ColumnID>
               </Source>
             </KeyColumn>
           </KeyColumns>
@@ -633,17 +437,33 @@
       <Hierarchies>
         <Hierarchy>
           <ID>Jerarquía</ID>
-          <Name>Jerarquía por Status</Name>
+          <Name>Jerarquía por Marca</Name>
           <Levels>
             <Level>
-              <ID>Order Status</ID>
-              <Name>Order Status</Name>
-              <SourceAttributeID>Order Status</SourceAttributeID>
+              <ID>Brand Name</ID>
+              <Name>Brand Name</Name>
+              <SourceAttributeID>Brand Name</SourceAttributeID>
             </Level>
             <Level>
-              <ID>Order Key</ID>
-              <Name>Order Key</Name>
-              <SourceAttributeID>Order Key</SourceAttributeID>
+              <ID>Product Name</ID>
+              <Name>Product Name</Name>
+              <SourceAttributeID>Product Key</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+        <Hierarchy>
+          <ID>Jerarquía 1</ID>
+          <Name>Jerarquía por Categoría</Name>
+          <Levels>
+            <Level>
+              <ID>Category Name</ID>
+              <Name>Category Name</Name>
+              <SourceAttributeID>Category Name</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Product Name</ID>
+              <Name>Product Name</Name>
+              <SourceAttributeID>Product Key</SourceAttributeID>
             </Level>
           </Levels>
         </Hierarchy>
@@ -660,9 +480,9 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-6491" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16633" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-6403" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="0" y="0" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
-                  <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                  <ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" />
                 </font>
                 <mouseicon>
                   <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -671,7 +491,7 @@
               <layoutmanager>
                 <ddsxmlobj />
               </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCustomers" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCustomers" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000430e0000" />
                 </control>
@@ -703,7 +523,7 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>-6491</Value>
+          <Value>-6403</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -764,14 +584,6 @@
               <AttributeID>Zip Code</AttributeID>
               <Name>Zip Code</Name>
             </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Start Date</AttributeID>
-              <Name>Start Date</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>End Date</AttributeID>
-              <Name>End Date</Name>
-            </AttributeRelationship>
           </AttributeRelationships>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
@@ -827,38 +639,6 @@
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
         </Attribute>
-        <Attribute>
-          <ID>Start Date</ID>
-          <Name>Start Date</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Date</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimCustomers</TableID>
-                <ColumnID>start_date</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>End Date</ID>
-          <Name>End Date</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Date</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimCustomers</TableID>
-                <ColumnID>end_date</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
       </Attributes>
       <Hierarchies>
         <Hierarchy>
@@ -879,7 +659,7 @@
         </Hierarchy>
         <Hierarchy>
           <ID>Jerarquía 1</ID>
-          <Name>Jerarquía por City</Name>
+          <Name>Jerarquía por Ciudad</Name>
           <Levels>
             <Level>
               <ID>City</ID>
@@ -906,9 +686,9 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2811" scrolltop="-6491" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2811" scrolltop="-6403" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="0" y="0" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
-                  <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                  <ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" />
                 </font>
                 <mouseicon>
                   <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -949,7 +729,7 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>-6491</Value>
+          <Value>-6403</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -1006,14 +786,6 @@
               <AttributeID>Manager Name</AttributeID>
               <Name>Manager Name</Name>
             </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Start Date</AttributeID>
-              <Name>Start Date</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>End Date</AttributeID>
-              <Name>End Date</Name>
-            </AttributeRelationship>
           </AttributeRelationships>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
@@ -1051,58 +823,10 @@
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
         </Attribute>
-        <Attribute>
-          <ID>Start Date</ID>
-          <Name>Start Date</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Date</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimStaffs</TableID>
-                <ColumnID>start_date</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>End Date</ID>
-          <Name>End Date</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Date</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimStaffs</TableID>
-                <ColumnID>end_date</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
       </Attributes>
       <Hierarchies>
         <Hierarchy>
           <ID>Jerarquía</ID>
-          <Name>Jerarquía por Active</Name>
-          <Levels>
-            <Level>
-              <ID>Active</ID>
-              <Name>Active</Name>
-              <SourceAttributeID>Active</SourceAttributeID>
-            </Level>
-            <Level>
-              <ID>Staff Name</ID>
-              <Name>Staff Name</Name>
-              <SourceAttributeID>Staff Key</SourceAttributeID>
-            </Level>
-          </Levels>
-        </Hierarchy>
-        <Hierarchy>
-          <ID>Jerarquía 1</ID>
           <Name>Jerarquía por Manager</Name>
           <Levels>
             <Level>
@@ -1117,22 +841,38 @@
             </Level>
           </Levels>
         </Hierarchy>
+        <Hierarchy>
+          <ID>Jerarquía 1</ID>
+          <Name>Jerarquía por Activos</Name>
+          <Levels>
+            <Level>
+              <ID>Active</ID>
+              <Name>Active</Name>
+              <SourceAttributeID>Active</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Staff Name</ID>
+              <Name>Staff Name</Name>
+              <SourceAttributeID>Staff Key</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
       </Hierarchies>
       <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
     </Dimension>
     <Dimension>
-      <ID>Dim Stocks</ID>
-      <Name>Dim Stocks</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <ID>Dim Orders</ID>
+      <Name>Dim Orders</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
       <Annotations>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-7108" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-7285" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="0" y="0" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
-                  <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                  <ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" />
                 </font>
                 <mouseicon>
                   <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -1141,7 +881,135 @@
               <layoutmanager>
                 <ddsxmlobj />
               </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStocks" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2240" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimOrders" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005f070000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_DimOrders" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-2828</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-7285</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>BikeStores DW</DataSourceViewID>
+      </Source>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Order Key</ID>
+          <Name>Order ID</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimOrders</TableID>
+                <ColumnID>order_key</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <NameColumn>
+            <DataType>WChar</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_DimOrders</TableID>
+              <ColumnID>order_id</ColumnID>
+            </Source>
+          </NameColumn>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Order Status</AttributeID>
+              <Name>Order Status</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Order Status</ID>
+          <Name>Order Status</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimOrders</TableID>
+                <ColumnID>order_status</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Stocks</ID>
+      <Name>Dim Stocks</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-7108" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="0" y="0" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStocks" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2240" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000c0080000" />
                 </control>
@@ -1188,7 +1056,7 @@
           <Value>100</Value>
         </Annotation>
       </Annotations>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Source xsi:type="DataSourceViewBinding">
         <DataSourceViewID>BikeStores DW</DataSourceViewID>
@@ -1213,39 +1081,14 @@
               </Source>
             </KeyColumn>
           </KeyColumns>
-          <NameColumn>
-            <DataType>WChar</DataType>
-            <Source xsi:type="ColumnBinding">
-              <TableID>dbo_DimStocks</TableID>
-              <ColumnID>store_id</ColumnID>
-            </Source>
-          </NameColumn>
           <AttributeRelationships>
-            <AttributeRelationship>
-              <AttributeID>Product Id</AttributeID>
-              <Name>Product Id</Name>
-            </AttributeRelationship>
             <AttributeRelationship>
               <AttributeID>Quantity</AttributeID>
               <Name>Quantity</Name>
             </AttributeRelationship>
           </AttributeRelationships>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Product Id</ID>
-          <Name>Product Id</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Integer</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimStocks</TableID>
-                <ColumnID>product_id</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
           <OrderBy>Key</OrderBy>
+          <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
         </Attribute>
@@ -1269,681 +1112,6 @@
       <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
     </Dimension>
     <Dimension>
-      <ID>Fact Orders</ID>
-      <Name>Fact Orders</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
-      <Annotations>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
-          <Value>
-            <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="2159" scrolltop="-337" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
-                <font>
-                  <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
-                </font>
-                <mouseicon>
-                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
-                </mouseicon>
-              </diagram>
-              <layoutmanager>
-                <ddsxmlobj />
-              </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimProducts" left="11224" top="9896" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3016" height="4710" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e0000c80b000066120000" />
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_DimProducts" vartype="8" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <shape groupshapeid="0" groupnode="0" />
-              </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactOrders" left="5420" top="6051" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3404" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e00004c0d000088130000" />
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_FactOrders" vartype="8" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <shape groupshapeid="0" groupnode="0" />
-              </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCustomers" left="8322" top="17006" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000430e0000" />
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_DimCustomers" vartype="8" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <shape groupshapeid="0" groupnode="0" />
-              </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimOrders" left="2922" top="17006" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005f070000" />
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_DimOrders" vartype="8" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <shape groupshapeid="0" groupnode="0" />
-              </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDate" left="11224" top="2496" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="4057" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e0000d90f000088130000" />
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_DimDate" vartype="8" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <shape groupshapeid="0" groupnode="0" />
-              </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStaffs" left="5605" top="0" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3034" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e0000da0b0000430e0000" />
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_DimStaffs" vartype="8" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <shape groupshapeid="0" groupnode="0" />
-              </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStores" left="20" top="7078" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="2946" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000820b0000" />
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dbo_DimStores" vartype="8" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <shape groupshapeid="0" groupnode="0" />
-              </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="8524" top="8801" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="3850" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobj>
-                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-                  </ddsxmlobj>
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dataSet.Relations[FK__FactOrder__produ__49C3F6B7]" vartype="8" />
-                    <property name="Virtual" value="0" vartype="11" />
-                    <property name="VisibleAP" value="0" vartype="3" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="18" destattachpoint="21" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="11224" y="12251" />
-                  <point x="10024" y="12251" />
-                  <point x="10024" y="9101" />
-                  <point x="8824" y="9101" />
-                </connector>
-              </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="8524" top="4597" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="3704" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobj>
-                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-                  </ddsxmlobj>
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dataSet.Relations[FK__FactOrder__shipp__4BAC3F29]" vartype="8" />
-                    <property name="Virtual" value="0" vartype="11" />
-                    <property name="VisibleAP" value="0" vartype="3" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="2" sourceattachpoint="22" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="11224" y="4996" />
-                  <point x="10024" y="4996" />
-                  <point x="10024" y="8001" />
-                  <point x="8824" y="8001" />
-                </connector>
-              </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="8524" top="6247" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="2604" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobj>
-                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-                  </ddsxmlobj>
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dataSet.Relations[FK__FactOrder__requi__4AB81AF0]" vartype="8" />
-                    <property name="Virtual" value="0" vartype="11" />
-                    <property name="VisibleAP" value="0" vartype="3" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="2" sourceattachpoint="28" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="11224" y="6646" />
-                  <point x="10024" y="6646" />
-                  <point x="10024" y="8551" />
-                  <point x="8824" y="8551" />
-                </connector>
-              </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="8524" top="2947" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="4804" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobj>
-                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-                  </ddsxmlobj>
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dataSet.Relations[FK__FactOrder__order__48CFD27E]" vartype="8" />
-                    <property name="Virtual" value="0" vartype="11" />
-                    <property name="VisibleAP" value="0" vartype="3" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="2" sourceattachpoint="16" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="11224" y="3346" />
-                  <point x="10024" y="3346" />
-                  <point x="10024" y="7451" />
-                  <point x="8824" y="7451" />
-                </connector>
-              </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="4023" top="10751" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="2299" height="6755" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobj>
-                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-                  </ddsxmlobj>
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dataSet.Relations[FK__FactOrder__order__47DBAE45]" vartype="8" />
-                    <property name="Virtual" value="0" vartype="11" />
-                    <property name="VisibleAP" value="0" vartype="3" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="2" sourceattachpoint="4" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="4422" y="17006" />
-                  <point x="4422" y="14029" />
-                  <point x="6022" y="14029" />
-                  <point x="6022" y="11051" />
-                </connector>
-              </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="2720" top="8152" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobj>
-                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-                  </ddsxmlobj>
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dataSet.Relations[FK__FactOrder__store__46E78A0C]" vartype="8" />
-                    <property name="Virtual" value="0" vartype="11" />
-                    <property name="VisibleAP" value="0" vartype="3" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="2" sourceattachpoint="15" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="3020" y="8551" />
-                  <point x="5420" y="8551" />
-                </connector>
-              </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="7372" top="10751" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="2850" height="6755" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobj>
-                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-                  </ddsxmlobj>
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dataSet.Relations[FK__FactOrder__custo__44FF419A]" vartype="8" />
-                    <property name="Virtual" value="0" vartype="11" />
-                    <property name="VisibleAP" value="0" vartype="3" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="2" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="9822" y="17006" />
-                  <point x="9822" y="14029" />
-                  <point x="7672" y="14029" />
-                  <point x="7672" y="11051" />
-                </connector>
-              </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="6723" top="3152" logicalid="15" controlid="15" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-                <control>
-                  <ddsxmlobj>
-                    <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
-                  </ddsxmlobj>
-                </control>
-                <layoutobject>
-                  <ddsxmlobj>
-                    <property name="LogicalObject" value="dataSet.Relations[FK__FactOrder__staff__45F365D3]" vartype="8" />
-                    <property name="Virtual" value="0" vartype="11" />
-                    <property name="VisibleAP" value="0" vartype="3" />
-                  </ddsxmlobj>
-                </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="2" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="7122" y="3651" />
-                  <point x="7122" y="6051" />
-                </connector>
-              </ddscontrol>
-            </dds>
-          </Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
-          <Value>true</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
-          <Value>false</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
-          <Value>true</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-          <Value>2159</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>-337</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-          <Value>20</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
-          <Value>0</Value>
-        </Annotation>
-        <Annotation>
-          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
-          <Value>75</Value>
-        </Annotation>
-      </Annotations>
-      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
-      <State>Unprocessed</State>
-      <Source xsi:type="DataSourceViewBinding">
-        <DataSourceViewID>BikeStores DW</DataSourceViewID>
-      </Source>
-      <ErrorConfiguration>
-        <KeyNotFound>ReportAndStop</KeyNotFound>
-        <KeyDuplicate>ReportAndStop</KeyDuplicate>
-        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
-      </ErrorConfiguration>
-      <CurrentStorageMode>Molap</CurrentStorageMode>
-      <Attributes>
-        <Attribute>
-          <ID>Sales Key</ID>
-          <Name>Sales Key</Name>
-          <Usage>Key</Usage>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Integer</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_FactOrders</TableID>
-                <ColumnID>sales_key</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <AttributeRelationships>
-            <AttributeRelationship>
-              <AttributeID>List Price Order</AttributeID>
-              <Name>List Price Order</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Quantity Order</AttributeID>
-              <Name>Quantity Order</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Discount</AttributeID>
-              <Name>Discount</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Price Discount</AttributeID>
-              <Name>Price Discount</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Date</AttributeID>
-              <Name>Date</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Day Name</AttributeID>
-              <Name>Day Name</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Month</AttributeID>
-              <Name>Month</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Quarter</AttributeID>
-              <Name>Quarter</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Year</AttributeID>
-              <Name>Year</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Product Name</AttributeID>
-              <Name>Product Name</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Order Status</AttributeID>
-              <Name>Order Status</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Store Name</AttributeID>
-              <Name>Store Name</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>City</AttributeID>
-              <Name>City</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>State</AttributeID>
-              <Name>State</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Zip Code</AttributeID>
-              <Name>Zip Code</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Full Name</AttributeID>
-              <Name>Full Name</Name>
-            </AttributeRelationship>
-            <AttributeRelationship>
-              <AttributeID>Dim Staffs - Full Name</AttributeID>
-              <Name>Dim Staffs - Full Name</Name>
-            </AttributeRelationship>
-          </AttributeRelationships>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>List Price Order</ID>
-          <Name>List Price Order</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Double</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_FactOrders</TableID>
-                <ColumnID>list_price_order</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Quantity Order</ID>
-          <Name>Quantity Order</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Integer</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_FactOrders</TableID>
-                <ColumnID>quantity_order</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Discount</ID>
-          <Name>Discount</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Double</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_FactOrders</TableID>
-                <ColumnID>discount</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Price Discount</ID>
-          <Name>Price Discount</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Double</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_FactOrders</TableID>
-                <ColumnID>price_discount</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Date</ID>
-          <Name>Date</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Date</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimDate</TableID>
-                <ColumnID>date</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Day Name</ID>
-          <Name>Day Name</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>9</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimDate</TableID>
-                <ColumnID>day_name</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Month</ID>
-          <Name>Month</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>2</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimDate</TableID>
-                <ColumnID>month</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Quarter</ID>
-          <Name>Quarter</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>1</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimDate</TableID>
-                <ColumnID>quarter</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Year</ID>
-          <Name>Year</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>4</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimDate</TableID>
-                <ColumnID>year</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Product Name</ID>
-          <Name>Product Name</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>255</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimProducts</TableID>
-                <ColumnID>product_name</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Order Status</ID>
-          <Name>Order Status</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>Integer</DataType>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimOrders</TableID>
-                <ColumnID>order_status</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Store Name</ID>
-          <Name>Store Name</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>255</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimStores</TableID>
-                <ColumnID>store_name</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>City</ID>
-          <Name>City</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>255</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimStores</TableID>
-                <ColumnID>city</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>State</ID>
-          <Name>State</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>10</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimStores</TableID>
-                <ColumnID>state</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Zip Code</ID>
-          <Name>Zip Code</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>5</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimStores</TableID>
-                <ColumnID>zip_code</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Full Name</ID>
-          <Name>Full Name</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>255</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimCustomers</TableID>
-                <ColumnID>full_name</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-        <Attribute>
-          <ID>Dim Staffs - Full Name</ID>
-          <Name>Dim Staffs - Full Name</Name>
-          <KeyColumns>
-            <KeyColumn>
-              <DataType>WChar</DataType>
-              <DataSize>100</DataSize>
-              <Source xsi:type="ColumnBinding">
-                <TableID>dbo_DimStaffs</TableID>
-                <ColumnID>full_name</ColumnID>
-              </Source>
-            </KeyColumn>
-          </KeyColumns>
-          <OrderBy>Key</OrderBy>
-          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-        </Attribute>
-      </Attributes>
-      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
-    </Dimension>
-    <Dimension>
       <ID>Dim Date</ID>
       <Name>Dim Date</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -1953,7 +1121,7 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2300" scrolltop="-5728" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2300" scrolltop="-5728" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7285" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
                   <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
                 </font>
@@ -2025,7 +1193,7 @@
       <Attributes>
         <Attribute>
           <ID>Date Key</ID>
-          <Name>Date Key</Name>
+          <Name>Full Date</Name>
           <Usage>Key</Usage>
           <KeyColumns>
             <KeyColumn>
@@ -2038,15 +1206,24 @@
           </KeyColumns>
           <NameColumn>
             <DataType>WChar</DataType>
+            <DataSize>10</DataSize>
             <Source xsi:type="ColumnBinding">
               <TableID>dbo_DimDate</TableID>
-              <ColumnID>date</ColumnID>
+              <ColumnID>full_date</ColumnID>
             </Source>
           </NameColumn>
           <AttributeRelationships>
             <AttributeRelationship>
+              <AttributeID>Date</AttributeID>
+              <Name>Date Time</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
               <AttributeID>Day Name</AttributeID>
               <Name>Day Name</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Week Of Month</AttributeID>
+              <Name>Week Of Month</Name>
             </AttributeRelationship>
             <AttributeRelationship>
               <AttributeID>Month Name</AttributeID>
@@ -2057,14 +1234,34 @@
               <Name>Quarter Name</Name>
             </AttributeRelationship>
             <AttributeRelationship>
-              <AttributeID>Year</AttributeID>
-              <Name>Year</Name>
+              <AttributeID>Year Name</AttributeID>
+              <Name>Year Name</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Is Weekday</AttributeID>
+              <Name>Is Weekday</Name>
             </AttributeRelationship>
             <AttributeRelationship>
               <AttributeID>Is Holiday</AttributeID>
               <Name>Is Holiday</Name>
             </AttributeRelationship>
           </AttributeRelationships>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Date</ID>
+          <Name>Date Time</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Date</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimDate</TableID>
+                <ColumnID>date</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
           <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
         </Attribute>
@@ -2078,6 +1275,23 @@
               <Source xsi:type="ColumnBinding">
                 <TableID>dbo_DimDate</TableID>
                 <ColumnID>day_name</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Week Of Month</ID>
+          <Name>Week Of Month</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimDate</TableID>
+                <ColumnID>week_of_month</ColumnID>
               </Source>
             </KeyColumn>
           </KeyColumns>
@@ -2120,15 +1334,31 @@
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
         </Attribute>
         <Attribute>
-          <ID>Year</ID>
-          <Name>Year</Name>
+          <ID>Year Name</ID>
+          <Name>Year Name</Name>
           <KeyColumns>
             <KeyColumn>
               <DataType>WChar</DataType>
-              <DataSize>4</DataSize>
+              <DataSize>7</DataSize>
               <Source xsi:type="ColumnBinding">
                 <TableID>dbo_DimDate</TableID>
-                <ColumnID>year</ColumnID>
+                <ColumnID>year_name</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Is Weekday</ID>
+          <Name>Is Weekday</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Boolean</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_DimDate</TableID>
+                <ColumnID>IsWeekday</ColumnID>
               </Source>
             </KeyColumn>
           </KeyColumns>
@@ -2153,6 +1383,271 @@
           <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
         </Attribute>
       </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <ID>Jerarquía</ID>
+          <Name>Jerarquía por año</Name>
+          <Levels>
+            <Level>
+              <ID>Year Name</ID>
+              <Name>Year Name</Name>
+              <SourceAttributeID>Year Name</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Full Date</ID>
+              <Name>Full Date</Name>
+              <SourceAttributeID>Date Key</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+        <Hierarchy>
+          <ID>Jerarquía 1</ID>
+          <Name>Jerarquía por mes</Name>
+          <Levels>
+            <Level>
+              <ID>Month Name</ID>
+              <Name>Month Name</Name>
+              <SourceAttributeID>Month Name</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Full Date</ID>
+              <Name>Full Date</Name>
+              <SourceAttributeID>Date Key</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+        <Hierarchy>
+          <ID>Jerarquía 2</ID>
+          <Name>Jerarquía por cuatrimestre</Name>
+          <Levels>
+            <Level>
+              <ID>Quarter Name</ID>
+              <Name>Quarter Name</Name>
+              <SourceAttributeID>Quarter Name</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Full Date</ID>
+              <Name>Full Date</Name>
+              <SourceAttributeID>Date Key</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+        <Hierarchy>
+          <ID>Jerarquía 3</ID>
+          <Name>Jerarquía en días laborales</Name>
+          <Levels>
+            <Level>
+              <ID>Is Weekday</ID>
+              <Name>Is Weekday</Name>
+              <SourceAttributeID>Is Weekday</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Full Date</ID>
+              <Name>Full Date</Name>
+              <SourceAttributeID>Date Key</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+        <Hierarchy>
+          <ID>Jerarquía 4</ID>
+          <Name>Jerarquía en feriados</Name>
+          <Levels>
+            <Level>
+              <ID>Is Holiday</ID>
+              <Name>Is Holiday</Name>
+              <SourceAttributeID>Is Holiday</SourceAttributeID>
+            </Level>
+            <Level>
+              <ID>Full Date</ID>
+              <Name>Full Date</Name>
+              <SourceAttributeID>Date Key</SourceAttributeID>
+            </Level>
+          </Levels>
+        </Hierarchy>
+      </Hierarchies>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Fact Orders</ID>
+      <Name>Fact Orders</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2626" scrolltop="-5728" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactOrders" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3404" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e00004c0d000088130000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_FactOrders" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-2626</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-5728</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>BikeStores DW</DataSourceViewID>
+      </Source>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Sales Key</ID>
+          <Name>Sales Key</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_FactOrders</TableID>
+                <ColumnID>sales_key</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>List Price Order</AttributeID>
+              <Name>Price Order</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Quantity Order</AttributeID>
+              <Name>Quantity Order</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Discount</AttributeID>
+              <Name>Discount</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Price Discount</AttributeID>
+              <Name>Price with Discount</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>List Price Order</ID>
+          <Name>Price Order</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_FactOrders</TableID>
+                <ColumnID>list_price_order</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Quantity Order</ID>
+          <Name>Quantity Order</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_FactOrders</TableID>
+                <ColumnID>quantity_order</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Discount</ID>
+          <Name>Discount</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_FactOrders</TableID>
+                <ColumnID>discount</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Price Discount</ID>
+          <Name>Price with Discount</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_FactOrders</TableID>
+                <ColumnID>price_discount</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
       <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
     </Dimension>
   </Dimensions>
@@ -2167,7 +1662,7 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6924" scrolltop="27" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="79" x="23513" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="26" scrolltop="-7381" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="79" x="23513" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
                   <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
                 </font>
@@ -2178,7 +1673,7 @@
               <layoutmanager>
                 <ddsxmlobj />
               </layoutmanager>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactOrders" left="5454" top="6051" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3404" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactOrders" left="5420" top="4287" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3404" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e00004c0d000088130000" />
                 </control>
@@ -2189,7 +1684,7 @@
                 </layoutobject>
                 <shape groupshapeid="0" groupnode="0" />
               </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStaffs" left="20" top="6725" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3034" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStaffs" left="11224" top="8662" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3034" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000da0b0000430e0000" />
                 </control>
@@ -2200,7 +1695,7 @@
                 </layoutobject>
                 <shape groupshapeid="0" groupnode="0" />
               </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStores" left="2948" top="15594" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="2946" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStores" left="20" top="5314" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="2946" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000820b0000" />
                 </control>
@@ -2211,7 +1706,7 @@
                 </layoutobject>
                 <shape groupshapeid="0" groupnode="0" />
               </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDate" left="11258" top="3908" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="4057" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDate" left="11224" top="1262" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="4057" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000d90f000088130000" />
                 </control>
@@ -2222,7 +1717,7 @@
                 </layoutobject>
                 <shape groupshapeid="0" groupnode="0" />
               </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimProducts" left="8348" top="15594" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3016" height="4710" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" left="2914" top="14712" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3016" height="4710" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000c80b000066120000" />
                 </control>
@@ -2233,7 +1728,7 @@
                 </layoutobject>
                 <shape groupshapeid="0" groupnode="0" />
               </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimOrders" left="11258" top="11308" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimOrders" left="5622" top="0" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005f070000" />
                 </control>
@@ -2244,7 +1739,7 @@
                 </layoutobject>
                 <shape groupshapeid="0" groupnode="0" />
               </ddscontrol>
-              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCustomers" left="5656" top="0" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" left="8330" top="14712" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000430e0000" />
                 </control>
@@ -2255,7 +1750,7 @@
                 </layoutobject>
                 <shape groupshapeid="0" groupnode="0" />
               </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="8558" top="6559" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="1742" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="MSDDS.Polyline" left="8524" top="3363" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="3174" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobj>
                     <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -2268,14 +1763,14 @@
                     <property name="VisibleAP" value="0" vartype="3" />
                   </ddsxmlobj>
                 </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="24" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="11258" y="6958" />
-                  <point x="10058" y="6958" />
-                  <point x="10058" y="8001" />
-                  <point x="8858" y="8001" />
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="22" destattachpoint="17" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="11224" y="3762" />
+                  <point x="10024" y="3762" />
+                  <point x="10024" y="6237" />
+                  <point x="8824" y="6237" />
                 </connector>
               </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="8558" top="7659" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="1192" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="MSDDS.Polyline" left="8524" top="5013" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="2074" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobj>
                     <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -2289,13 +1784,13 @@
                   </ddsxmlobj>
                 </layoutobject>
                 <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="28" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="11258" y="8058" />
-                  <point x="10058" y="8058" />
-                  <point x="10058" y="8551" />
-                  <point x="8858" y="8551" />
+                  <point x="11224" y="5412" />
+                  <point x="10024" y="5412" />
+                  <point x="10024" y="6787" />
+                  <point x="8824" y="6787" />
                 </connector>
               </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="7406" top="10751" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="2850" height="5343" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="MSDDS.Polyline" left="4023" top="8987" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="2299" height="6225" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobj>
                     <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -2308,14 +1803,14 @@
                     <property name="VisibleAP" value="0" vartype="3" />
                   </ddsxmlobj>
                 </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="9856" y="15594" />
-                  <point x="9856" y="13323" />
-                  <point x="7706" y="13323" />
-                  <point x="7706" y="11051" />
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="4" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="4422" y="14712" />
+                  <point x="4422" y="12000" />
+                  <point x="6022" y="12000" />
+                  <point x="6022" y="9287" />
                 </connector>
               </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="8558" top="4359" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="3392" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="MSDDS.Polyline" left="8524" top="1713" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="4274" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobj>
                     <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -2329,13 +1824,13 @@
                   </ddsxmlobj>
                 </layoutobject>
                 <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="16" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="11258" y="4758" />
-                  <point x="10058" y="4758" />
-                  <point x="10058" y="7451" />
-                  <point x="8858" y="7451" />
+                  <point x="11224" y="2112" />
+                  <point x="10024" y="2112" />
+                  <point x="10024" y="5687" />
+                  <point x="8824" y="5687" />
                 </connector>
               </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="8558" top="8801" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="3000" height="3850" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="MSDDS.Polyline" left="6723" top="1388" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobj>
                     <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -2348,14 +1843,12 @@
                     <property name="VisibleAP" value="0" vartype="3" />
                   </ddsxmlobj>
                 </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="12" destattachpoint="21" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="11258" y="12251" />
-                  <point x="10058" y="12251" />
-                  <point x="10058" y="9101" />
-                  <point x="8858" y="9101" />
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="7122" y="1887" />
+                  <point x="7122" y="4287" />
                 </connector>
               </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="4049" top="10751" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="2307" height="5343" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="MSDDS.Polyline" left="2720" top="6388" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobj>
                     <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -2368,14 +1861,12 @@
                     <property name="VisibleAP" value="0" vartype="3" />
                   </ddsxmlobj>
                 </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="4" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="4448" y="15594" />
-                  <point x="4448" y="13323" />
-                  <point x="6056" y="13323" />
-                  <point x="6056" y="11051" />
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="15" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="3020" y="6787" />
+                  <point x="5420" y="6787" />
                 </connector>
               </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="6757" top="3152" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="MSDDS.Polyline" left="7372" top="8987" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="2858" height="6225" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobj>
                     <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -2388,12 +1879,14 @@
                     <property name="VisibleAP" value="0" vartype="3" />
                   </ddsxmlobj>
                 </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="1" sourceattachpoint="5" destattachpoint="4" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="7156" y="3651" />
-                  <point x="7156" y="6051" />
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="1" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="9830" y="14712" />
+                  <point x="9830" y="12000" />
+                  <point x="7672" y="12000" />
+                  <point x="7672" y="9287" />
                 </connector>
               </ddscontrol>
-              <ddscontrol controlprogid="MSDDS.Polyline" left="2754" top="8151" logicalid="15" controlid="15" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+              <ddscontrol controlprogid="MSDDS.Polyline" left="8524" top="7037" logicalid="15" controlid="15" masterid="0" hint1="0" hint2="0" width="3000" height="3850" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                 <control>
                   <ddsxmlobj>
                     <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -2406,11 +1899,11 @@
                     <property name="VisibleAP" value="0" vartype="3" />
                   </ddsxmlobj>
                 </layoutobject>
-                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="17" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                  <point x="3054" y="8550" />
-                  <point x="4254" y="8550" />
-                  <point x="4254" y="8551" />
-                  <point x="5454" y="8551" />
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="16" destattachpoint="21" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="11224" y="10487" />
+                  <point x="10024" y="10487" />
+                  <point x="10024" y="7337" />
+                  <point x="8824" y="7337" />
                 </connector>
               </ddscontrol>
             </dds>
@@ -2430,11 +1923,11 @@
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-          <Value>-6924</Value>
+          <Value>26</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-          <Value>27</Value>
+          <Value>-7381</Value>
         </Annotation>
         <Annotation>
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -2472,45 +1965,6 @@
             <Attribute>
               <AttributeID>Price Discount</AttributeID>
             </Attribute>
-            <Attribute>
-              <AttributeID>Date</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Day Name</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Month</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Quarter</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Year</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Product Name</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Order Status</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Store Name</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>City</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>State</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Zip Code</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Full Name</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Dim Staffs - Full Name</AttributeID>
-            </Attribute>
           </Attributes>
         </Dimension>
         <Dimension>
@@ -2522,7 +1976,13 @@
               <AttributeID>Date Key</AttributeID>
             </Attribute>
             <Attribute>
+              <AttributeID>Date</AttributeID>
+            </Attribute>
+            <Attribute>
               <AttributeID>Day Name</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Week Of Month</AttributeID>
             </Attribute>
             <Attribute>
               <AttributeID>Month Name</AttributeID>
@@ -2531,12 +1991,32 @@
               <AttributeID>Quarter Name</AttributeID>
             </Attribute>
             <Attribute>
-              <AttributeID>Year</AttributeID>
+              <AttributeID>Year Name</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Is Weekday</AttributeID>
             </Attribute>
             <Attribute>
               <AttributeID>Is Holiday</AttributeID>
             </Attribute>
           </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <HierarchyID>Jerarquía</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 1</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 2</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 3</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 4</HierarchyID>
+            </Hierarchy>
+          </Hierarchies>
         </Dimension>
         <Dimension>
           <ID>Required Date</ID>
@@ -2547,7 +2027,13 @@
               <AttributeID>Date Key</AttributeID>
             </Attribute>
             <Attribute>
+              <AttributeID>Date</AttributeID>
+            </Attribute>
+            <Attribute>
               <AttributeID>Day Name</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Week Of Month</AttributeID>
             </Attribute>
             <Attribute>
               <AttributeID>Month Name</AttributeID>
@@ -2556,12 +2042,32 @@
               <AttributeID>Quarter Name</AttributeID>
             </Attribute>
             <Attribute>
-              <AttributeID>Year</AttributeID>
+              <AttributeID>Year Name</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Is Weekday</AttributeID>
             </Attribute>
             <Attribute>
               <AttributeID>Is Holiday</AttributeID>
             </Attribute>
           </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <HierarchyID>Jerarquía</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 1</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 2</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 3</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 4</HierarchyID>
+            </Hierarchy>
+          </Hierarchies>
         </Dimension>
         <Dimension>
           <ID>Dim Products</ID>
@@ -2583,12 +2089,6 @@
             <Attribute>
               <AttributeID>List Price</AttributeID>
             </Attribute>
-            <Attribute>
-              <AttributeID>Start Date</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>End Date</AttributeID>
-            </Attribute>
           </Attributes>
           <Hierarchies>
             <Hierarchy>
@@ -2608,7 +2108,13 @@
               <AttributeID>Date Key</AttributeID>
             </Attribute>
             <Attribute>
+              <AttributeID>Date</AttributeID>
+            </Attribute>
+            <Attribute>
               <AttributeID>Day Name</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Week Of Month</AttributeID>
             </Attribute>
             <Attribute>
               <AttributeID>Month Name</AttributeID>
@@ -2617,12 +2123,32 @@
               <AttributeID>Quarter Name</AttributeID>
             </Attribute>
             <Attribute>
-              <AttributeID>Year</AttributeID>
+              <AttributeID>Year Name</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Is Weekday</AttributeID>
             </Attribute>
             <Attribute>
               <AttributeID>Is Holiday</AttributeID>
             </Attribute>
           </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <HierarchyID>Jerarquía</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 1</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 2</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 3</HierarchyID>
+            </Hierarchy>
+            <Hierarchy>
+              <HierarchyID>Jerarquía 4</HierarchyID>
+            </Hierarchy>
+          </Hierarchies>
         </Dimension>
         <Dimension>
           <ID>Dim Orders</ID>
@@ -2636,11 +2162,6 @@
               <AttributeID>Order Status</AttributeID>
             </Attribute>
           </Attributes>
-          <Hierarchies>
-            <Hierarchy>
-              <HierarchyID>Jerarquía</HierarchyID>
-            </Hierarchy>
-          </Hierarchies>
         </Dimension>
         <Dimension>
           <ID>Dim Stores</ID>
@@ -2686,12 +2207,6 @@
             <Attribute>
               <AttributeID>Zip Code</AttributeID>
             </Attribute>
-            <Attribute>
-              <AttributeID>Start Date</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>End Date</AttributeID>
-            </Attribute>
           </Attributes>
           <Hierarchies>
             <Hierarchy>
@@ -2715,12 +2230,6 @@
             </Attribute>
             <Attribute>
               <AttributeID>Manager Name</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>Start Date</AttributeID>
-            </Attribute>
-            <Attribute>
-              <AttributeID>End Date</AttributeID>
             </Attribute>
           </Attributes>
           <Hierarchies>
@@ -3034,9 +2543,9 @@
                 <Name>_ALL_TABLES_</Name>
                 <DiagramLayout>
                   <dds>
-                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="44" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6115" scrolltop="466" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="24077" y="17709" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="34" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6115" scrolltop="1465" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="0" y="0" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                       <font>
-                        <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                        <ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" />
                       </font>
                       <mouseicon>
                         <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -3045,7 +2554,7 @@
                     <layoutmanager>
                       <ddsxmlobj />
                     </layoutmanager>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactOrders" left="5763" top="7187" logicalid="17" controlid="1" masterid="0" hint1="0" hint2="0" width="3404" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactOrders" left="5434" top="4287" logicalid="17" controlid="1" masterid="0" hint1="0" hint2="0" width="3404" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobjectstreaminitwrapper binary="000e00004c0d000088130000" />
                       </control>
@@ -3056,7 +2565,7 @@
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStores" left="8665" top="18142" logicalid="18" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="2946" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStores" left="8336" top="15242" logicalid="18" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="2946" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000820b0000" />
                       </control>
@@ -3067,7 +2576,7 @@
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimOrders" left="5965" top="2900" logicalid="19" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimOrders" left="5636" top="0" logicalid="19" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005f070000" />
                       </control>
@@ -3078,7 +2587,7 @@
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimProducts" left="11567" top="11032" logicalid="20" controlid="4" masterid="0" hint1="0" hint2="0" width="3016" height="4710" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimProducts" left="11238" top="8132" logicalid="20" controlid="4" masterid="0" hint1="0" hint2="0" width="3016" height="4710" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobjectstreaminitwrapper binary="000e0000c80b000066120000" />
                       </control>
@@ -3089,7 +2598,7 @@
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDate" left="11567" top="3632" logicalid="21" controlid="5" masterid="0" hint1="0" hint2="0" width="4057" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDate" left="11238" top="732" logicalid="21" controlid="5" masterid="0" hint1="0" hint2="0" width="4057" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobjectstreaminitwrapper binary="000e0000d90f000088130000" />
                       </control>
@@ -3100,7 +2609,7 @@
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStaffs" left="329" top="7861" logicalid="22" controlid="6" masterid="0" hint1="0" hint2="0" width="3034" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStaffs" left="0" top="4961" logicalid="22" controlid="6" masterid="0" hint1="0" hint2="0" width="3034" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobjectstreaminitwrapper binary="000e0000da0b0000430e0000" />
                       </control>
@@ -3111,7 +2620,7 @@
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCustomers" left="3265" top="18142" logicalid="23" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCustomers" left="2936" top="15242" logicalid="23" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="3651" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000430e0000" />
                       </control>
@@ -3122,7 +2631,7 @@
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStocks" left="17161" top="10685" logicalid="35" controlid="19" masterid="0" hint1="0" hint2="0" width="3000" height="2140" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStocks" left="14785" top="14112" logicalid="24" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="2140" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005c080000" />
                       </control>
@@ -3133,7 +2642,7 @@
                       </layoutobject>
                       <shape groupshapeid="0" groupnode="0" />
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="8867" top="7933" logicalid="36" controlid="20" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="8538" top="5033" logicalid="25" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -3147,13 +2656,13 @@
                         </ddsxmlobj>
                       </layoutobject>
                       <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="30" destattachpoint="15" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                        <point x="11567" y="8332" />
-                        <point x="10367" y="8332" />
-                        <point x="10367" y="8587" />
-                        <point x="9167" y="8587" />
+                        <point x="11238" y="5432" />
+                        <point x="10038" y="5432" />
+                        <point x="10038" y="5687" />
+                        <point x="8838" y="5687" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="8867" top="7383" logicalid="37" controlid="21" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="8538" top="4483" logicalid="26" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -3167,13 +2676,13 @@
                         </ddsxmlobj>
                       </layoutobject>
                       <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="28" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                        <point x="11567" y="7782" />
-                        <point x="10367" y="7782" />
-                        <point x="10367" y="8037" />
-                        <point x="9167" y="8037" />
+                        <point x="11238" y="4882" />
+                        <point x="10038" y="4882" />
+                        <point x="10038" y="5137" />
+                        <point x="8838" y="5137" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="8867" top="10788" logicalid="38" controlid="22" masterid="0" hint1="0" hint2="0" width="3000" height="849" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="8538" top="7888" logicalid="27" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="849" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -3187,13 +2696,13 @@
                         </ddsxmlobj>
                       </layoutobject>
                       <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="10" destattachpoint="25" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                        <point x="11567" y="11187" />
-                        <point x="10367" y="11187" />
-                        <point x="10367" y="11337" />
-                        <point x="9167" y="11337" />
+                        <point x="11238" y="8287" />
+                        <point x="10038" y="8287" />
+                        <point x="10038" y="8437" />
+                        <point x="8838" y="8437" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="8867" top="6833" logicalid="39" controlid="23" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="8538" top="3933" logicalid="28" controlid="12" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -3207,13 +2716,13 @@
                         </ddsxmlobj>
                       </layoutobject>
                       <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="1" sourceattachpoint="26" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                        <point x="11567" y="7232" />
-                        <point x="10367" y="7232" />
-                        <point x="10367" y="7487" />
-                        <point x="9167" y="7487" />
+                        <point x="11238" y="4332" />
+                        <point x="10038" y="4332" />
+                        <point x="10038" y="4587" />
+                        <point x="8838" y="4587" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="5966" top="4288" logicalid="40" controlid="24" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="5637" top="1388" logicalid="29" controlid="13" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -3227,11 +2736,11 @@
                         </ddsxmlobj>
                       </layoutobject>
                       <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="1" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                        <point x="6365" y="4787" />
-                        <point x="6365" y="7187" />
+                        <point x="6036" y="1887" />
+                        <point x="6036" y="4287" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="8265" top="11887" logicalid="41" controlid="25" masterid="0" hint1="0" hint2="0" width="1200" height="6755" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="7936" top="8987" logicalid="30" controlid="14" masterid="0" hint1="0" hint2="0" width="1200" height="6755" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -3245,13 +2754,13 @@
                         </ddsxmlobj>
                       </layoutobject>
                       <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="0" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                        <point x="9065" y="18142" />
-                        <point x="9065" y="15165" />
-                        <point x="8565" y="15165" />
-                        <point x="8565" y="12187" />
+                        <point x="8736" y="15242" />
+                        <point x="8736" y="12265" />
+                        <point x="8236" y="12265" />
+                        <point x="8236" y="9287" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="5466" top="11887" logicalid="42" controlid="26" masterid="0" hint1="0" hint2="0" width="1199" height="6755" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="5137" top="8987" logicalid="31" controlid="15" masterid="0" hint1="0" hint2="0" width="1199" height="6755" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -3265,13 +2774,13 @@
                         </ddsxmlobj>
                       </layoutobject>
                       <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="1" sourceattachpoint="8" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                        <point x="5865" y="18142" />
-                        <point x="5865" y="15165" />
-                        <point x="6365" y="15165" />
-                        <point x="6365" y="12187" />
+                        <point x="5536" y="15242" />
+                        <point x="5536" y="12265" />
+                        <point x="6036" y="12265" />
+                        <point x="6036" y="9287" />
                       </connector>
                     </ddscontrol>
-                    <ddscontrol controlprogid="MSDDS.Polyline" left="3063" top="7637" logicalid="43" controlid="27" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="2734" top="4737" logicalid="32" controlid="16" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                       <control>
                         <ddsxmlobj>
                           <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
@@ -3285,10 +2794,10 @@
                         </ddsxmlobj>
                       </layoutobject>
                       <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="11" destattachpoint="12" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
-                        <point x="3363" y="8036" />
-                        <point x="4563" y="8036" />
-                        <point x="4563" y="8037" />
-                        <point x="5763" y="8037" />
+                        <point x="3034" y="5136" />
+                        <point x="4234" y="5136" />
+                        <point x="4234" y="5137" />
+                        <point x="5434" y="5137" />
                       </connector>
                     </ddscontrol>
                   </dds>
@@ -3296,7 +2805,7 @@
                 <ShowRelationshipNames>False</ShowRelationshipNames>
                 <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
                 <DiagramViewPortLeft>-6115</DiagramViewPortLeft>
-                <DiagramViewPortTop>466</DiagramViewPortTop>
+                <DiagramViewPortTop>1465</DiagramViewPortTop>
                 <DiagramBoundingLeft>0</DiagramBoundingLeft>
                 <DiagramBoundingTop>0</DiagramBoundingTop>
                 <DiagramZoom>75</DiagramZoom>
@@ -3688,37 +3197,37 @@
               <xs:selector xpath=".//dbo_DimStocks" />
               <xs:field xpath="stock_key" />
             </xs:unique>
-            <xs:keyref name="FK__FactOrder__shipp__4BAC3F29" refer="dbo_DimDate_Constraint1">
+            <xs:keyref name="FK__FactOrder__staff__45F365D3" refer="dbo_DimStaffs_Constraint1">
               <xs:selector xpath=".//dbo_FactOrders" />
-              <xs:field xpath="shipped_date_key" />
-            </xs:keyref>
-            <xs:keyref name="FK__FactOrder__requi__4AB81AF0" refer="dbo_DimDate_Constraint1">
-              <xs:selector xpath=".//dbo_FactOrders" />
-              <xs:field xpath="required_date_key" />
-            </xs:keyref>
-            <xs:keyref name="FK__FactOrder__produ__49C3F6B7" refer="dbo_DimProducts_Constraint1">
-              <xs:selector xpath=".//dbo_FactOrders" />
-              <xs:field xpath="product_key" />
-            </xs:keyref>
-            <xs:keyref name="FK__FactOrder__order__48CFD27E" refer="dbo_DimDate_Constraint1">
-              <xs:selector xpath=".//dbo_FactOrders" />
-              <xs:field xpath="order_date_key" />
-            </xs:keyref>
-            <xs:keyref name="FK__FactOrder__order__47DBAE45" refer="dbo_DimOrders_Constraint1">
-              <xs:selector xpath=".//dbo_FactOrders" />
-              <xs:field xpath="order_key" />
-            </xs:keyref>
-            <xs:keyref name="FK__FactOrder__store__46E78A0C" refer="dbo_DimStores_Constraint1">
-              <xs:selector xpath=".//dbo_FactOrders" />
-              <xs:field xpath="store_key" />
+              <xs:field xpath="staff_key" />
             </xs:keyref>
             <xs:keyref name="FK__FactOrder__custo__44FF419A" refer="dbo_DimCustomers_Constraint1">
               <xs:selector xpath=".//dbo_FactOrders" />
               <xs:field xpath="customer_key" />
             </xs:keyref>
-            <xs:keyref name="FK__FactOrder__staff__45F365D3" refer="dbo_DimStaffs_Constraint1">
+            <xs:keyref name="FK__FactOrder__store__46E78A0C" refer="dbo_DimStores_Constraint1">
               <xs:selector xpath=".//dbo_FactOrders" />
-              <xs:field xpath="staff_key" />
+              <xs:field xpath="store_key" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactOrder__order__47DBAE45" refer="dbo_DimOrders_Constraint1">
+              <xs:selector xpath=".//dbo_FactOrders" />
+              <xs:field xpath="order_key" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactOrder__order__48CFD27E" refer="dbo_DimDate_Constraint1">
+              <xs:selector xpath=".//dbo_FactOrders" />
+              <xs:field xpath="order_date_key" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactOrder__produ__49C3F6B7" refer="dbo_DimProducts_Constraint1">
+              <xs:selector xpath=".//dbo_FactOrders" />
+              <xs:field xpath="product_key" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactOrder__requi__4AB81AF0" refer="dbo_DimDate_Constraint1">
+              <xs:selector xpath=".//dbo_FactOrders" />
+              <xs:field xpath="required_date_key" />
+            </xs:keyref>
+            <xs:keyref name="FK__FactOrder__shipp__4BAC3F29" refer="dbo_DimDate_Constraint1">
+              <xs:selector xpath=".//dbo_FactOrders" />
+              <xs:field xpath="shipped_date_key" />
             </xs:keyref>
           </xs:element>
         </xs:schema>

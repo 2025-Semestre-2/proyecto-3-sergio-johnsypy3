@@ -27,7 +27,7 @@
             <Name>_ALL_TABLES_</Name>
             <DiagramLayout>
               <dds>
-                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="44" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6115" scrolltop="466" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="24077" y="17709" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="46" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6115" scrolltop="1465" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="24077" y="17709" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                   <font>
                     <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
                   </font>
@@ -115,7 +115,7 @@
                   </layoutobject>
                   <shape groupshapeid="0" groupnode="0" />
                 </ddscontrol>
-                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStocks" left="17161" top="10685" logicalid="35" controlid="19" masterid="0" hint1="0" hint2="0" width="3000" height="2140" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStocks" left="15114" top="17012" logicalid="35" controlid="19" masterid="0" hint1="0" hint2="0" width="3000" height="2140" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005c080000" />
                   </control>
@@ -129,7 +129,7 @@
                 <ddscontrol controlprogid="MSDDS.Polyline" left="8867" top="7933" logicalid="36" controlid="20" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
-                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
                     </ddsxmlobj>
                   </control>
                   <layoutobject>
@@ -149,7 +149,7 @@
                 <ddscontrol controlprogid="MSDDS.Polyline" left="8867" top="7383" logicalid="37" controlid="21" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
-                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
                     </ddsxmlobj>
                   </control>
                   <layoutobject>
@@ -169,7 +169,7 @@
                 <ddscontrol controlprogid="MSDDS.Polyline" left="8867" top="10788" logicalid="38" controlid="22" masterid="0" hint1="0" hint2="0" width="3000" height="849" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
-                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
                     </ddsxmlobj>
                   </control>
                   <layoutobject>
@@ -189,7 +189,7 @@
                 <ddscontrol controlprogid="MSDDS.Polyline" left="8867" top="6833" logicalid="39" controlid="23" masterid="0" hint1="0" hint2="0" width="3000" height="954" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
-                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
                     </ddsxmlobj>
                   </control>
                   <layoutobject>
@@ -209,7 +209,7 @@
                 <ddscontrol controlprogid="MSDDS.Polyline" left="5966" top="4288" logicalid="40" controlid="24" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
-                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
                     </ddsxmlobj>
                   </control>
                   <layoutobject>
@@ -227,7 +227,7 @@
                 <ddscontrol controlprogid="MSDDS.Polyline" left="8265" top="11887" logicalid="41" controlid="25" masterid="0" hint1="0" hint2="0" width="1200" height="6755" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
-                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
                     </ddsxmlobj>
                   </control>
                   <layoutobject>
@@ -247,7 +247,7 @@
                 <ddscontrol controlprogid="MSDDS.Polyline" left="5466" top="11887" logicalid="42" controlid="26" masterid="0" hint1="0" hint2="0" width="1199" height="6755" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
-                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
                     </ddsxmlobj>
                   </control>
                   <layoutobject>
@@ -267,7 +267,7 @@
                 <ddscontrol controlprogid="MSDDS.Polyline" left="3063" top="7637" logicalid="43" controlid="27" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
                   <control>
                     <ddsxmlobj>
-                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
                     </ddsxmlobj>
                   </control>
                   <layoutobject>
@@ -289,7 +289,7 @@
             <ShowRelationshipNames>False</ShowRelationshipNames>
             <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
             <DiagramViewPortLeft>-6115</DiagramViewPortLeft>
-            <DiagramViewPortTop>466</DiagramViewPortTop>
+            <DiagramViewPortTop>1465</DiagramViewPortTop>
             <DiagramBoundingLeft>0</DiagramBoundingLeft>
             <DiagramBoundingTop>0</DiagramBoundingTop>
             <DiagramZoom>75</DiagramZoom>
@@ -643,7 +643,7 @@
                   <xs:element name="stock_key" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="f6a2c89c-8f07-4367-a174-e0b293fee230" msprop:DbColumnName="stock_key" msprop:FriendlyName="stock_key" type="xs:int" />
                   <xs:element name="store_id" msprop:design-time-name="50a894c0-a130-490c-a2f5-d621d0c01eec" msprop:DbColumnName="store_id" msprop:FriendlyName="store_id" type="xs:int" />
                   <xs:element name="product_id" msprop:design-time-name="b3c4e456-6f14-4904-9cd7-479a3336470c" msprop:DbColumnName="product_id" msprop:FriendlyName="product_id" type="xs:int" />
-                  <xs:element name="quantity" msprop:DbColumnName="quantity" msprop:design-time-name="ce5502a2-33dc-4dad-8ca4-f6b51a8a72da" type="xs:int" minOccurs="0" />
+                  <xs:element name="quantity" msprop:design-time-name="ce5502a2-33dc-4dad-8ca4-f6b51a8a72da" msprop:DbColumnName="quantity" type="xs:int" minOccurs="0" />
                 </xs:sequence>
               </xs:complexType>
             </xs:element>

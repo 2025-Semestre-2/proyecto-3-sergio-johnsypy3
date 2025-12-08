@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="99f9684e-839e-42c8-8605-c0ad63b4d76f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="04fc3cc4-4f0b-4af1-b706-b8d7cb1ccacb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Stocks</ID>
   <Name>Dim Stocks</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -6,6 +6,32 @@
   <Annotations>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2828" scrolltop="-7108" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8696" y="16457" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStocks" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2240" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000c0080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimStocks" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
@@ -21,15 +47,15 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>0</Value>
+      <Value>-2828</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>0</Value>
+      <Value>-7108</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
-      <Value>0</Value>
+      <Value>20</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
@@ -42,72 +68,47 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="2b8c818c-cdd0-477c-be79-e01b74e25dfd">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e1a14c10-5d1e-4d85-8857-03ce428fdf6e">
     <DataSourceViewID>BikeStores DW</DataSourceViewID>
   </Source>
-  <ErrorConfiguration dwd:design-time-name="c2961ba0-726c-4688-8bf3-8df551207723">
+  <ErrorConfiguration dwd:design-time-name="008e05c1-db83-42e6-befa-227542ea1b28">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="3f8c65f3-2bae-4f71-a67a-b0e0ef131101">
+    <Attribute dwd:design-time-name="4607e21a-3832-4e4f-9b32-18a8fbc8604c">
       <ID>Stock Key</ID>
       <Name>Stock Key</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ae4dc98f-855e-4b7b-86a9-4aee247f1557">
+        <KeyColumn dwd:design-time-name="eeab22b7-90be-4a35-8b06-fcb30cfed125">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="11f23b1f-f1fc-4f34-8a41-b9823e293409">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5b72e3ba-f92f-48fc-a07a-ce01801ebed5">
             <TableID>dbo_DimStocks</TableID>
             <ColumnID>stock_key</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="aae9d710-bdc0-41d5-b72b-ff75b2ec4f47">
-        <DataType>WChar</DataType>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="21c7a05e-72e9-400f-ac77-4faf28efdc0a">
-          <TableID>dbo_DimStocks</TableID>
-          <ColumnID>store_id</ColumnID>
-        </Source>
-      </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="bf531685-aff8-4abd-b7f0-efaf5c900330">
-          <AttributeID>Product Id</AttributeID>
-          <Name>Product Id</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="e6551c07-03f1-46d2-ad62-b8929e7dcc16">
+        <AttributeRelationship dwd:design-time-name="f0e0d930-03a9-40df-976d-2b9adc1c1aed">
           <AttributeID>Quantity</AttributeID>
           <Name>Quantity</Name>
         </AttributeRelationship>
       </AttributeRelationships>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="3905eea1-b130-426e-afc0-3bd2748de955">
-      <ID>Product Id</ID>
-      <Name>Product Id</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="b6f3b34a-8e3e-4921-9179-7c66b656985a">
-          <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="d8e601ff-67fd-4c97-87e2-a4764a5cbd53">
-            <TableID>dbo_DimStocks</TableID>
-            <ColumnID>product_id</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
       <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="d638c114-dd41-4907-a81d-4534db2f525f">
+    <Attribute dwd:design-time-name="a2c6a09f-18eb-4056-9607-d948b19a5e30">
       <ID>Quantity</ID>
       <Name>Quantity</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="2f0507c5-cd06-4604-b620-7eda8a951a07">
+        <KeyColumn dwd:design-time-name="d581cc55-9313-4d5c-a3af-d9d91ab38850">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f6f2a7dd-ed4d-48a6-8eb2-4282f5532b41">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3835deb9-b89d-4d35-a7f2-eb0b13d45ea9">
             <TableID>dbo_DimStocks</TableID>
             <ColumnID>quantity</ColumnID>
           </Source>
