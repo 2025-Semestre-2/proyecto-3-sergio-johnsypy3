@@ -39,6 +39,7 @@ CREATE TABLE DimStocks ( --
 	stock_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     store_id INT NOT NULL,
     product_id INT NOT NULL,
+	quantity INT NOT NULL
 	--product_name VARCHAR(255) NOT NULL
 )
 go
