@@ -77,7 +77,7 @@ CREATE TABLE sales.staffs (
     active tinyint NOT NULL,
     store_id INT NOT NULL,
     manager_id INT NULL
-    --email, phone, ¿active?
+    --email, phone
 )
 go
 

@@ -36,24 +36,6 @@ ORDER BY Orden, FullName;</CommandText>
     <DataSet Name="VentasCantidadProductoCategoria">
       <Query>
         <DataSourceName>BikeStoresDW</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="?">
-            <Value>=Parameters!Cliente.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!Marca.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!FechaInicio.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
-          <QueryParameter Name="?">
-            <Value>=Parameters!FechaFin.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
-        </QueryParameters>
         <CommandText>=Switch(
 
 Parameters!Cliente.Value = "Todos los Clientes" And Parameters!Marca.Value = "Todas las Marcas",
@@ -140,12 +122,6 @@ True,
     <DataSet Name="Marca">
       <Query>
         <DataSourceName>BikeStoresDW</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="?">
-            <Value>=Parameters!Cliente.Value</Value>
-            <rd:UserDefined>true</rd:UserDefined>
-          </QueryParameter>
-        </QueryParameters>
         <CommandText>=IIf(
     Parameters!Cliente.Value = "Todos los Clientes",
 

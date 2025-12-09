@@ -1,24 +1,8 @@
-
 use BikeStoresDW
 go
 
-/*
-CREATE TABLE DimBrands (
-    brand_id INT NOT NULL,
-    brand_name VARCHAR(255) NOT NULL
-)
-go
 
-CREATE TABLE DimCategories (
-    category_id INT NOT NULL,
-    category_name VARCHAR(255) NOT NULL
-)
-go
-*/
-
---lista
--- Poner HIST
-CREATE TABLE DimProducts ( --
+CREATE TABLE DimProducts ( 
 	product_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     product_id INT NOT NULL,
     product_name VARCHAR(255) NOT NULL,
@@ -33,25 +17,18 @@ CREATE TABLE DimProducts ( --
 )
 go
 
-
--- lista
-CREATE TABLE DimStocks ( --
+CREATE TABLE DimStocks ( 
 	stock_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     store_id INT NOT NULL,
     product_id INT NOT NULL,
 	quantity INT NOT NULL
-	--product_name VARCHAR(255) NOT NULL
+
 )
 go
 
-
--- lista
--- Poner HIST
-CREATE TABLE DimCustomers ( -- 
+CREATE TABLE DimCustomers ( 
 	customer_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     customer_id INT NOT NULL,
-    --first_name VARCHAR(255) NOT NULL,
-    --last_name VARCHAR(255) NOT NULL,
 	full_name VARCHAR(255) NOT NULL,
     city VARCHAR(50) NOT NULL,
     state VARCHAR(25) NOT NULL,
@@ -61,34 +38,15 @@ CREATE TABLE DimCustomers ( --
 ) 
 go
 
-
--- revisar
-CREATE TABLE DimOrders ( --
+CREATE TABLE DimOrders ( 
 	order_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     order_id INT NOT NULL,
-    --customer_id INT NOT NULL,
     order_status INT NOT NULL,
 	order_status_description VARCHAR(255) NOT NULL
-    --store_id INT NOT NULL,
-    --staff_id INT NOT NULL
 )
 go
 
-/*
-CREATE TABLE sales.order_items (
-    order_id INT NOT NULL,
-    item_id INT NOT NULL,
-    product_id INT NOT NULL,
-    quantity INT NOT NULL,
-    list_price DECIMAL(10,2) NOT NULL,
-    discount DECIMAL(5,2) NOT NULL
-)
-go
-*/
-
--- lista
--- Poner HIST
-CREATE TABLE DimStaffs ( --
+CREATE TABLE DimStaffs ( 
 	staff_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     staff_id INT NOT NULL,
     full_name VARCHAR(100) NOT NULL,
@@ -100,9 +58,6 @@ CREATE TABLE DimStaffs ( --
 )
 go
 
-
-
--- lista
 CREATE TABLE DimStores (
 	store_key INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     store_id INT NOT NULL,
@@ -113,21 +68,17 @@ CREATE TABLE DimStores (
 )
 go
 
-
--- SALES DROP TABLE dbo.FactOrders
 CREATE TABLE dbo.FactOrders (
 	sales_key INT IDENTITY(1,1) NOT NULL,
 	product_key INT NOT NULL,
-	--SupplierKey INT NOT NULL,
 	customer_key INT NOT NULL,
 	staff_key INT NOT NULL,
 	store_key INT NOT NULL,
-	--ShipperKey INT NOT NULL,
 
 	order_key INT NOT NULL,
-	order_date_key INT NOT NULL, -- ESTO VA CON DimDate
-	required_date_key INT NOT NULL, -- ESTO VA CON DimDate
-	shipped_date_key INT NOT NULL, -- ESTO VA CON DimDate
+	order_date_key INT NOT NULL, 
+	required_date_key INT NOT NULL,
+	shipped_date_key INT NOT NULL, 
 	
 	unit_price_order DECIMAL(10,2) NOT NULL,       -- precio por unidad
     quantity_order INT NOT NULL,                   -- cantidad vendida
@@ -166,10 +117,3 @@ GO
 ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(shipped_date_key) --DimDate
 REFERENCES dbo.DimDate (date_key)
 GO
---ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(SupplierKey)
---REFERENCES dbo.DimSuppliers (SuppliersKey)
---GO
---ALTER TABLE dbo.FactOrders  WITH CHECK ADD FOREIGN KEY(ShipperKey)
---REFERENCES dbo.DimShippers (ShippersKey)
---GO
-

@@ -11,12 +11,20 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Populate_DimDate.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Populate_BikeStores.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Populate_BikeStores.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_DimDate.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Create_DimDate.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStoresStage.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Create_BikeStoresStage.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStores.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Create_BikeStores.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,55 +34,79 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Populate_DimDate.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (98))",
+              "Title": "Populate_DimDate.sql - SERMONBADI.master (SERMONBADI\\sermo (100))",
               "DocumentMoniker": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Populate_DimDate.sql",
               "RelativeDocumentMoniker": "Populate_DimDate.sql",
-              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Populate_DimDate.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (98))",
-              "RelativeToolTip": "Populate_DimDate.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (98))",
+              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Populate_DimDate.sql - SERMONBADI.master (SERMONBADI\\sermo (100))",
+              "RelativeToolTip": "Populate_DimDate.sql - SERMONBADI.master (SERMONBADI\\sermo (100))",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-12-06T01:27:23.459Z",
-              "EditorCaption": " - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (98))"
+              "WhenOpened": "2025-12-09T04:35:23.917Z",
+              "EditorCaption": " - SERMONBADI.master (SERMONBADI\\sermo (100))"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Create_DimDate.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (76))",
-              "DocumentMoniker": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_DimDate.sql",
-              "RelativeDocumentMoniker": "Create_DimDate.sql",
-              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_DimDate.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (76))",
-              "RelativeToolTip": "Create_DimDate.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (76))",
+              "Title": "Populate_BikeStores.sql - SERMONBADI.master (SERMONBADI\\sermo (98))",
+              "DocumentMoniker": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Populate_BikeStores.sql",
+              "RelativeDocumentMoniker": "Populate_BikeStores.sql",
+              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Populate_BikeStores.sql - SERMONBADI.master (SERMONBADI\\sermo (98))",
+              "RelativeToolTip": "Populate_BikeStores.sql - SERMONBADI.master (SERMONBADI\\sermo (98))",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-12-06T00:53:48.752Z",
-              "EditorCaption": " - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (76))"
+              "WhenOpened": "2025-12-09T04:35:22.729Z",
+              "EditorCaption": " - SERMONBADI.master (SERMONBADI\\sermo (98))"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Create_BikeStoresStage.sql - SERMONBADI.BikeStoresStage (SERMONBADI\\sermo (67))",
+              "Title": "Create_DimDate.sql - SERMONBADI.master (SERMONBADI\\sermo (92))",
+              "DocumentMoniker": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_DimDate.sql",
+              "RelativeDocumentMoniker": "Create_DimDate.sql",
+              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_DimDate.sql - SERMONBADI.master (SERMONBADI\\sermo (92))",
+              "RelativeToolTip": "Create_DimDate.sql - SERMONBADI.master (SERMONBADI\\sermo (92))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-09T04:35:21.088Z",
+              "EditorCaption": " - SERMONBADI.master (SERMONBADI\\sermo (92))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create_BikeStoresStage.sql - SERMONBADI.master (SERMONBADI\\sermo (105))",
               "DocumentMoniker": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStoresStage.sql",
               "RelativeDocumentMoniker": "Create_BikeStoresStage.sql",
-              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStoresStage.sql - SERMONBADI.BikeStoresStage (SERMONBADI\\sermo (67))",
-              "RelativeToolTip": "Create_BikeStoresStage.sql - SERMONBADI.BikeStoresStage (SERMONBADI\\sermo (67))",
+              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStoresStage.sql - SERMONBADI.master (SERMONBADI\\sermo (105))",
+              "RelativeToolTip": "Create_BikeStoresStage.sql - SERMONBADI.master (SERMONBADI\\sermo (105))",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-12-05T20:47:26.766Z",
-              "EditorCaption": " - SERMONBADI.BikeStoresStage (SERMONBADI\\sermo (67))"
+              "WhenOpened": "2025-12-09T04:35:19.767Z",
+              "EditorCaption": " - SERMONBADI.master (SERMONBADI\\sermo (105))"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Create_BikeStoresDW.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (72))",
+              "Title": "Create_BikeStoresDW.sql - SERMONBADI.master (SERMONBADI\\sermo (104))",
               "DocumentMoniker": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStoresDW.sql",
               "RelativeDocumentMoniker": "Create_BikeStoresDW.sql",
-              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStoresDW.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (72))",
-              "RelativeToolTip": "Create_BikeStoresDW.sql - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (72))",
+              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStoresDW.sql - SERMONBADI.master (SERMONBADI\\sermo (104))",
+              "RelativeToolTip": "Create_BikeStoresDW.sql - SERMONBADI.master (SERMONBADI\\sermo (104))",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-12-05T20:23:48.598Z",
-              "EditorCaption": " - SERMONBADI.BikeStoresDW (SERMONBADI\\sermo (72))"
+              "WhenOpened": "2025-12-09T04:35:18.394Z",
+              "EditorCaption": " - SERMONBADI.master (SERMONBADI\\sermo (104))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create_BikeStores.sql - SERMONBADI.master (SERMONBADI\\sermo (96))",
+              "DocumentMoniker": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStores.sql",
+              "RelativeDocumentMoniker": "Create_BikeStores.sql",
+              "ToolTip": "C:\\Users\\sermo\\OneDrive - Estudiantes ITCR\\TEC\\2025\\II Semestre\\Bases II\\proyecto-3-sergio-johnsypy3\\Script sql\\Create_BikeStores.sql - SERMONBADI.master (SERMONBADI\\sermo (96))",
+              "RelativeToolTip": "Create_BikeStores.sql - SERMONBADI.master (SERMONBADI\\sermo (96))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-09T04:35:14.811Z",
+              "EditorCaption": " - SERMONBADI.master (SERMONBADI\\sermo (96))"
             }
           ]
         }

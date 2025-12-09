@@ -364,7 +364,10 @@ True,
                         </Paragraphs>
                         <rd:DefaultName>Marca</rd:DefaultName>
                         <Style>
-                          <Border />
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
                           <BackgroundColor>#f0fdff</BackgroundColor>
                           <PaddingLeft>4pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
