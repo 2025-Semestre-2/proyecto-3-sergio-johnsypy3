@@ -68,6 +68,7 @@ CREATE TABLE DimOrders ( --
     order_id INT NOT NULL,
     --customer_id INT NOT NULL,
     order_status INT NOT NULL,
+	order_status_description VARCHAR(255) NOT NULL
     --store_id INT NOT NULL,
     --staff_id INT NOT NULL
 )
@@ -122,19 +123,18 @@ CREATE TABLE dbo.FactOrders (
 	staff_key INT NOT NULL,
 	store_key INT NOT NULL,
 	--ShipperKey INT NOT NULL,
+
 	order_key INT NOT NULL,
 	order_date_key INT NOT NULL, -- ESTO VA CON DimDate
 	required_date_key INT NOT NULL, -- ESTO VA CON DimDate
 	shipped_date_key INT NOT NULL, -- ESTO VA CON DimDate
-	--QuantityPerUnit nvarchar(40) not null, 
-	list_price_order DECIMAL(10,2) not null,
-	--UnitsInStock smallint not null,
-	quantity_order INT not null,
-	--Freight money not null, 
-	discount DECIMAL(5,2) NOT NULL,
-	price_discount DECIMAL(10, 2) NOT NULL
-	--Quantity smallint not null, -- TRES QUANTITY?
-	--UnitPriceOrder money not null --UnitPrice?
+	
+	unit_price_order DECIMAL(10,2) NOT NULL,       -- precio por unidad
+    quantity_order INT NOT NULL,                   -- cantidad vendida
+    unit_discount DECIMAL(5,2) NOT NULL,     -- descuento 
+	gross_amount DECIMAL(10,2) NOT NULL,  -- monto total sin descuento
+    discount_amount DECIMAL(10,2) NOT NULL,  -- monto descontado
+    net_amount DECIMAL(10,2) NOT NULL,       -- precio final después del descuento
 
 PRIMARY KEY CLUSTERED 
 (

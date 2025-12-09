@@ -36,16 +36,16 @@
       <FullPath>Dim Staffs.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Orders.dim</Name>
-      <FullPath>Dim Orders.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim Stocks.dim</Name>
       <FullPath>Dim Stocks.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Dim Date.dim</Name>
       <FullPath>Dim Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Orders.dim</Name>
+      <FullPath>Dim Orders.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Fact Orders.dim</Name>

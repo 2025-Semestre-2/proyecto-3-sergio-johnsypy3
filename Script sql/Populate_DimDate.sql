@@ -92,96 +92,104 @@ BEGIN
 
 
 /* Populate Your Dimension Table with values*/
-	
-	INSERT INTO [dbo].[DimDate]
-	SELECT
-		
-		CONVERT (char(8),@CurrentDate,112) as date_key,
-		@CurrentDate AS date,
-		CONVERT (char(10),@CurrentDate,103) as full_date,
-		DATEPART(DD, @CurrentDate) AS day_of_month,
-		--Apply Suffix values like 1st, 2nd 3rd etc..
-		/*
-		CASE 
-			WHEN DATEPART(DD,@CurrentDate) IN (11,12,13) 
-			THEN CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'th'
-			WHEN RIGHT(DATEPART(DD,@CurrentDate),1) = 1 
-			THEN CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'ero'
-			WHEN RIGHT(DATEPART(DD,@CurrentDate),1) = 2 
-			THEN CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'do'
-			WHEN RIGHT(DATEPART(DD,@CurrentDate),1) = 3 
-			THEN CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'rd'
-			ELSE CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'th' 
-			END AS day_suffix,
-		*/
-		
-		DATENAME(DW, @CurrentDate) AS day_name,
-		DATEPART(DW, @CurrentDate) AS day_of_week_usa,
 
-		-- check for day of week as Per US and change it as per UK format 
-		CASE DATEPART(DW, @CurrentDate)
-			WHEN 1 THEN 7
-			WHEN 2 THEN 1
-			WHEN 3 THEN 2
-			WHEN 4 THEN 3
-			WHEN 5 THEN 4
-			WHEN 6 THEN 5
-			WHEN 7 THEN 6
-			END 
-			AS day_of_week_cr,
+	IF NOT EXISTS (
+		SELECT 1 
+		FROM dbo.DimDate 
+		WHERE date_key = CONVERT(char(8), @CurrentDate, 112)
+	)
+	BEGIN
+		INSERT INTO [dbo].[DimDate]
+		SELECT
 		
-		@day_of_week_in_month AS day_of_week_in_month,
-		@day_of_week_in_year AS day_of_week_in_year,
-		@day_of_quarter AS day_of_quarter,
-		DATEPART(DY, @CurrentDate) AS day_of_year,
-		DATEPART(WW, @CurrentDate) + 1 - DATEPART(WW, CONVERT(VARCHAR, 
-		DATEPART(MM, @CurrentDate)) + '/1/' + CONVERT(VARCHAR, 
-		DATEPART(YY, @CurrentDate))) AS week_of_month,
-		(DATEDIFF(DD, DATEADD(QQ, DATEDIFF(QQ, 0, @CurrentDate), 0), 
-		@CurrentDate) / 7) + 1 AS week_of_quarter,
-		DATEPART(WW, @CurrentDate) AS week_of_year,
-		DATEPART(MM, @CurrentDate) AS month,
-		DATENAME(MM, @CurrentDate) AS month_name,
-		CASE
-			WHEN DATEPART(MM, @CurrentDate) IN (1, 4, 7, 10) THEN 1
-			WHEN DATEPART(MM, @CurrentDate) IN (2, 5, 8, 11) THEN 2
-			WHEN DATEPART(MM, @CurrentDate) IN (3, 6, 9, 12) THEN 3
-			END AS month_of_quarter,
-		DATEPART(QQ, @CurrentDate) AS quarter,
-		CASE DATEPART(QQ, @CurrentDate)
-			WHEN 1 THEN 'Primero'
-			WHEN 2 THEN 'Segundo'
-			WHEN 3 THEN 'Tercero'
-			WHEN 4 THEN 'Cuarto'
-			END AS quarter_name,
-		DATEPART(YEAR, @CurrentDate) AS year,
-		'CY ' + CONVERT(VARCHAR, DATEPART(YEAR, @CurrentDate)) AS year_name,
-		LEFT(DATENAME(MM, @CurrentDate), 3) + '-' + CONVERT(VARCHAR, 
-		DATEPART(YY, @CurrentDate)) AS month_year,
-		RIGHT('0' + CONVERT(VARCHAR, DATEPART(MM, @CurrentDate)),2) + 
-		CONVERT(VARCHAR, DATEPART(YY, @CurrentDate)) AS mmyyyy,
-		CONVERT(DATETIME, CONVERT(DATE, DATEADD(DD, - (DATEPART(DD, 
-		@CurrentDate) - 1), @CurrentDate))) AS first_day_of_month,
-		CONVERT(DATETIME, CONVERT(DATE, DATEADD(DD, - (DATEPART(DD, 
-		(DATEADD(MM, 1, @CurrentDate)))), DATEADD(MM, 1, 
-		@CurrentDate)))) AS last_day_of_month,
-		DATEADD(QQ, DATEDIFF(QQ, 0, @CurrentDate), 0) AS first_day_of_quarter,
-		DATEADD(QQ, DATEDIFF(QQ, -1, @CurrentDate), -1) AS last_day_of_quarter,
-		CONVERT(DATETIME, '01/01/' + CONVERT(VARCHAR, DATEPART(YY, 
-		@CurrentDate))) AS first_day_of_year,
-		CONVERT(DATETIME, '12/31/' + CONVERT(VARCHAR, DATEPART(YY, 
-		@CurrentDate))) AS last_day_of_year,
-		CASE DATEPART(DW, @CurrentDate)
-			WHEN 1 THEN 0
-			WHEN 2 THEN 1
-			WHEN 3 THEN 1
-			WHEN 4 THEN 1
-			WHEN 5 THEN 1
-			WHEN 6 THEN 1
-			WHEN 7 THEN 0
-			END AS IsWeekday,
-		NULL AS IsHoliday,
-		NULL AS Holiday
+			CONVERT (char(8),@CurrentDate,112) as date_key,
+			@CurrentDate AS date,
+			CONVERT (char(10),@CurrentDate,103) as full_date,
+			DATEPART(DD, @CurrentDate) AS day_of_month,
+			--Apply Suffix values like 1st, 2nd 3rd etc..
+			/*
+			CASE 
+				WHEN DATEPART(DD,@CurrentDate) IN (11,12,13) 
+				THEN CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'th'
+				WHEN RIGHT(DATEPART(DD,@CurrentDate),1) = 1 
+				THEN CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'ero'
+				WHEN RIGHT(DATEPART(DD,@CurrentDate),1) = 2 
+				THEN CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'do'
+				WHEN RIGHT(DATEPART(DD,@CurrentDate),1) = 3 
+				THEN CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'rd'
+				ELSE CAST(DATEPART(DD,@CurrentDate) AS VARCHAR) + 'th' 
+				END AS day_suffix,
+			*/
+		
+			DATENAME(DW, @CurrentDate) AS day_name,
+			DATEPART(DW, @CurrentDate) AS day_of_week_usa,
+
+			-- check for day of week as Per US and change it as per UK format 
+			CASE DATEPART(DW, @CurrentDate)
+				WHEN 1 THEN 7
+				WHEN 2 THEN 1
+				WHEN 3 THEN 2
+				WHEN 4 THEN 3
+				WHEN 5 THEN 4
+				WHEN 6 THEN 5
+				WHEN 7 THEN 6
+				END 
+				AS day_of_week_cr,
+		
+			@day_of_week_in_month AS day_of_week_in_month,
+			@day_of_week_in_year AS day_of_week_in_year,
+			@day_of_quarter AS day_of_quarter,
+			DATEPART(DY, @CurrentDate) AS day_of_year,
+			DATEPART(WW, @CurrentDate) + 1 - DATEPART(WW, CONVERT(VARCHAR, 
+			DATEPART(MM, @CurrentDate)) + '/1/' + CONVERT(VARCHAR, 
+			DATEPART(YY, @CurrentDate))) AS week_of_month,
+			(DATEDIFF(DD, DATEADD(QQ, DATEDIFF(QQ, 0, @CurrentDate), 0), 
+			@CurrentDate) / 7) + 1 AS week_of_quarter,
+			DATEPART(WW, @CurrentDate) AS week_of_year,
+			DATEPART(MM, @CurrentDate) AS month,
+			DATENAME(MM, @CurrentDate) AS month_name,
+			CASE
+				WHEN DATEPART(MM, @CurrentDate) IN (1, 4, 7, 10) THEN 1
+				WHEN DATEPART(MM, @CurrentDate) IN (2, 5, 8, 11) THEN 2
+				WHEN DATEPART(MM, @CurrentDate) IN (3, 6, 9, 12) THEN 3
+				END AS month_of_quarter,
+			DATEPART(QQ, @CurrentDate) AS quarter,
+			CASE DATEPART(QQ, @CurrentDate)
+				WHEN 1 THEN 'Primero'
+				WHEN 2 THEN 'Segundo'
+				WHEN 3 THEN 'Tercero'
+				WHEN 4 THEN 'Cuarto'
+				END AS quarter_name,
+			DATEPART(YEAR, @CurrentDate) AS year,
+			'CY ' + CONVERT(VARCHAR, DATEPART(YEAR, @CurrentDate)) AS year_name,
+			LEFT(DATENAME(MM, @CurrentDate), 3) + '-' + CONVERT(VARCHAR, 
+			DATEPART(YY, @CurrentDate)) AS month_year,
+			RIGHT('0' + CONVERT(VARCHAR, DATEPART(MM, @CurrentDate)),2) + 
+			CONVERT(VARCHAR, DATEPART(YY, @CurrentDate)) AS mmyyyy,
+			CONVERT(DATETIME, CONVERT(DATE, DATEADD(DD, - (DATEPART(DD, 
+			@CurrentDate) - 1), @CurrentDate))) AS first_day_of_month,
+			CONVERT(DATETIME, CONVERT(DATE, DATEADD(DD, - (DATEPART(DD, 
+			(DATEADD(MM, 1, @CurrentDate)))), DATEADD(MM, 1, 
+			@CurrentDate)))) AS last_day_of_month,
+			DATEADD(QQ, DATEDIFF(QQ, 0, @CurrentDate), 0) AS first_day_of_quarter,
+			DATEADD(QQ, DATEDIFF(QQ, -1, @CurrentDate), -1) AS last_day_of_quarter,
+			CONVERT(DATETIME, '01/01/' + CONVERT(VARCHAR, DATEPART(YY, 
+			@CurrentDate))) AS first_day_of_year,
+			CONVERT(DATETIME, '12/31/' + CONVERT(VARCHAR, DATEPART(YY, 
+			@CurrentDate))) AS last_day_of_year,
+			CASE DATEPART(DW, @CurrentDate)
+				WHEN 1 THEN 0
+				WHEN 2 THEN 1
+				WHEN 3 THEN 1
+				WHEN 4 THEN 1
+				WHEN 5 THEN 1
+				WHEN 6 THEN 1
+				WHEN 7 THEN 0
+				END AS IsWeekday,
+			NULL AS IsHoliday,
+			NULL AS Holiday
+
+	END
 
 	SET @CurrentDate = DATEADD(DD, 1, @CurrentDate)
 END

@@ -24,13 +24,13 @@
         <ID>Dim Staffs</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Orders</ID>
-      </Dimension>
-      <Dimension>
         <ID>Dim Stocks</ID>
       </Dimension>
       <Dimension>
         <ID>Dim Date</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Orders</ID>
       </Dimension>
       <Dimension>
         <ID>Fact Orders</ID>

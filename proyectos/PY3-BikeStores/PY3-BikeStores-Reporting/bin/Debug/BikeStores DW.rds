@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="BikeStores DW">
-  <ConnectionProperties>
-    <Extension>OLEDB</Extension>
-    <ConnectString>Provider=MSOLEDBSQL.1;Data Source=localhost;Initial Catalog=BikeStoresDW;Trust Server Certificate=True</ConnectString>
-    <IntegratedSecurity>true</IntegratedSecurity>
-  </ConnectionProperties>
-  <DataSourceID>cd8174f3-bbc0-4bac-918c-fd655c1f8b80</DataSourceID>
-</RptDataSource>
