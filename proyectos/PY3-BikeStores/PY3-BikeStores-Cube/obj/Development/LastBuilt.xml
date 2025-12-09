@@ -1,6 +1,6 @@
 ﻿<Infos>
   <Item name="BikeStores DW 1.partitions">
-    <Time>639008204034653026</Time>
+    <Time>639008209568240744</Time>
     <Hash length="20">
       <b>125</b>
       <b>50</b>
@@ -25,7 +25,7 @@
     </Hash>
   </Item>
   <Item name="BikeStores DW.ds">
-    <Time>639007115861971773</Time>
+    <Time>639007330411338089</Time>
     <Hash length="20">
       <b>67</b>
       <b>153</b>
@@ -50,7 +50,7 @@
     </Hash>
   </Item>
   <Item name="PY3-BikeStores-Cube.database">
-    <Time>639006973064525691</Time>
+    <Time>639007330411558457</Time>
     <Hash length="20">
       <b>201</b>
       <b>201</b>
@@ -74,8 +74,33 @@
       <b>79</b>
     </Hash>
   </Item>
+  <Item name="BikeStores DW.dsv">
+    <Time>639008209568478893</Time>
+    <Hash length="20">
+      <b>50</b>
+      <b>238</b>
+      <b>209</b>
+      <b>13</b>
+      <b>180</b>
+      <b>74</b>
+      <b>147</b>
+      <b>56</b>
+      <b>120</b>
+      <b>139</b>
+      <b>91</b>
+      <b>73</b>
+      <b>126</b>
+      <b>58</b>
+      <b>233</b>
+      <b>97</b>
+      <b>139</b>
+      <b>37</b>
+      <b>138</b>
+      <b>165</b>
+    </Hash>
+  </Item>
   <Item name="Fact Orders.dim">
-    <Time>639008203581796082</Time>
+    <Time>639008209568835153</Time>
     <Hash length="20">
       <b>230</b>
       <b>170</b>
@@ -100,7 +125,7 @@
     </Hash>
   </Item>
   <Item name="BikeStores DW 1.cube">
-    <Time>639008204034303451</Time>
+    <Time>639008209568028879</Time>
     <Hash length="20">
       <b>239</b>
       <b>29</b>
@@ -125,7 +150,7 @@
     </Hash>
   </Item>
   <Item name="Dim Orders.dim">
-    <Time>639008202051569360</Time>
+    <Time>639008209568641601</Time>
     <Hash length="20">
       <b>164</b>
       <b>155</b>
@@ -149,33 +174,8 @@
       <b>75</b>
     </Hash>
   </Item>
-  <Item name="Dim Stocks.dim">
-    <Time>639007297877182431</Time>
-    <Hash length="20">
-      <b>247</b>
-      <b>237</b>
-      <b>108</b>
-      <b>171</b>
-      <b>2</b>
-      <b>89</b>
-      <b>32</b>
-      <b>70</b>
-      <b>167</b>
-      <b>151</b>
-      <b>103</b>
-      <b>199</b>
-      <b>175</b>
-      <b>90</b>
-      <b>104</b>
-      <b>125</b>
-      <b>81</b>
-      <b>18</b>
-      <b>85</b>
-      <b>4</b>
-    </Hash>
-  </Item>
   <Item name="Dim Products.dim">
-    <Time>639007952535614905</Time>
+    <Time>639007973370768323</Time>
     <Hash length="20">
       <b>190</b>
       <b>237</b>
@@ -199,33 +199,33 @@
       <b>20</b>
     </Hash>
   </Item>
-  <Item name="BikeStores DW.dsv">
-    <Time>639008201732781684</Time>
+  <Item name="Dim Stocks.dim">
+    <Time>639007330411499731</Time>
     <Hash length="20">
-      <b>50</b>
-      <b>238</b>
-      <b>209</b>
-      <b>13</b>
-      <b>180</b>
-      <b>74</b>
-      <b>147</b>
-      <b>56</b>
-      <b>120</b>
-      <b>139</b>
-      <b>91</b>
-      <b>73</b>
-      <b>126</b>
-      <b>58</b>
-      <b>233</b>
-      <b>97</b>
-      <b>139</b>
-      <b>37</b>
-      <b>138</b>
-      <b>165</b>
+      <b>247</b>
+      <b>237</b>
+      <b>108</b>
+      <b>171</b>
+      <b>2</b>
+      <b>89</b>
+      <b>32</b>
+      <b>70</b>
+      <b>167</b>
+      <b>151</b>
+      <b>103</b>
+      <b>199</b>
+      <b>175</b>
+      <b>90</b>
+      <b>104</b>
+      <b>125</b>
+      <b>81</b>
+      <b>18</b>
+      <b>85</b>
+      <b>4</b>
     </Hash>
   </Item>
   <Item name="Dim Date.dim">
-    <Time>639007932372749609</Time>
+    <Time>639007330411424227</Time>
     <Hash length="20">
       <b>187</b>
       <b>31</b>
@@ -250,7 +250,7 @@
     </Hash>
   </Item>
   <Item name="Dim Customers.dim">
-    <Time>639007932373792365</Time>
+    <Time>639007973370736645</Time>
     <Hash length="20">
       <b>25</b>
       <b>202</b>
@@ -275,7 +275,7 @@
     </Hash>
   </Item>
   <Item name="Dim Staffs.dim">
-    <Time>639007812148263455</Time>
+    <Time>639007973370990247</Time>
     <Hash length="20">
       <b>78</b>
       <b>96</b>
@@ -300,7 +300,7 @@
     </Hash>
   </Item>
   <Item name="Dim Stores.dim">
-    <Time>639007054680263843</Time>
+    <Time>639007330411509985</Time>
     <Hash length="20">
       <b>104</b>
       <b>204</b>
